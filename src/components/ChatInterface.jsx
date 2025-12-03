@@ -19,7 +19,10 @@ const ChatInterface = () => {
   };
 
   useEffect(() => {
-    scrollToBottom();
+    // Solo hacemos scroll si hay más de 1 mensaje (es decir, cuando tú o la IA escriben)
+    if (messages.length > 1) {
+      scrollToBottom();
+    }
   }, [messages, isLoading]);
 
   const handleSendMessage = async (e) => {

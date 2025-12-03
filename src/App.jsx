@@ -10,6 +10,7 @@ import ChatInterface from './components/ChatInterface';
 import Projects from './components/Projects';
 import StarBackground from './components/StarBackground';
 import Contact from './components/Contact';
+import ScrollToTop from './components/ScrollToTop';
 
 // Datos y Estilos
 import { cvData } from './data/cv';
@@ -24,6 +25,8 @@ const fadeInUp = {
 function App() {
   return (
     <BrowserRouter>
+    <ScrollToTop /> {/* <--- 2. PONERLO AQUÍ (El orden importa: dentro del Router) */}
+      <StarBackground />
       <Layout>
         <StarBackground />
         <header className={styles.header}>
