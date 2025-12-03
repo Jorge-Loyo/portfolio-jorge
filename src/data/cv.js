@@ -11,6 +11,40 @@ export const cvData = {
     summary:
       "Profesional en transición al desarrollo de software con sólida experiencia en gestión y ERP (Odoo). Combino lógica de negocio con habilidades técnicas en JS, React y Python para crear soluciones reales.",
   },
+
+  socials: [
+    {
+      id: 1,
+      name: "Email",
+      value: "Jorgenayati@gmail.com",
+      link: "mailto:Jorgenayati@gmail.com",
+      icon: "Mail",
+    },
+    {
+      id: 2,
+      name: "WhatsApp",
+      value: "+54 9 11 6557 6344",
+      // El formato wa.me requiere el número internacional sin + ni espacios
+      link: "https://wa.me/5491165576344",
+      icon: "MessageCircle",
+    },
+    {
+      id: 3,
+      name: "GitHub",
+      value: "Jorge-Loyo",
+      link: "https://github.com/Jorge-Loyo",
+      icon: "Github",
+    },
+    {
+      id: 4,
+      name: "LinkedIn",
+      value: "Jorge Loyo",
+      // Reemplaza esto con tu link real de LinkedIn cuando lo tengas
+      link: "https://www.linkedin.com/in/jorge-antonio-loyo-nayati/",
+      icon: "Linkedin",
+    },
+  ],
+
   skills: [
     { name: "JavaScript", level: "Intermedio" },
     { name: "React", level: "Aprendiendo" },

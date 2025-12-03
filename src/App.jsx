@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import ChatInterface from './components/ChatInterface';
 import Projects from './components/Projects';
 import StarBackground from './components/StarBackground';
+import Contact from './components/Contact';
 
 // Datos y Estilos
 import { cvData } from './data/cv';
@@ -72,6 +73,7 @@ function App() {
           } />
 
           <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
 
       </Layout>
