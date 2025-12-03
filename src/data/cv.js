@@ -7,8 +7,7 @@ export const cvData = {
     location: "San Telmo, CABA, Argentina",
     email: "Jorgenayati@gmail.com",
     github: "https://github.com/Jorge-Loyo",
-    avatar:
-      "https://ui-avatars.com/api/?name=Jorge+Loyo&background=0a0a0a&color=fff",
+    avatar: "/perfil.jpg",
     summary:
       "Profesional en transición al desarrollo de software con sólida experiencia en gestión y ERP (Odoo). Combino lógica de negocio con habilidades técnicas en JS, React y Python para crear soluciones reales.",
   },
@@ -42,6 +41,13 @@ export const cvData = {
   ],
   projects: [
     {
+      id: 1, // Lo ponemos primero porque "Agendarte" suena a App completa (Full Stack)
+      name: "Agendarte",
+      desc: "Plataforma integral de gestión de turnos y reservas. Solución diseñada para optimizar la organización de agendas, permitiendo a los usuarios reservar citas en tiempo real y a los administradores gestionar disponibilidad.",
+      tech: ["React", "Node.js", "SQL", "UX/UI"], // Ajusta si usaste Python/Mongo
+      link: "https://github.com/Jorge-Loyo/Agendarte",
+    },
+    {
       id: 1,
       name: "Portfolio Inteligente con IA",
       desc: "Web personal interactiva desarrollada con React 19 y Node.js. Integra el modelo Gemini 2.0 Flash de Google para responder preguntas sobre mi perfil en tiempo real, con animaciones en Framer Motion.",
@@ -59,7 +65,7 @@ export const cvData = {
       id: 3,
       name: "Tienda Repostería",
       desc: "Landing page responsive para un comercio gastronómico. Enfocada en diseño UI/UX atractivo, estructura semántica y maquetación adaptable a dispositivos móviles.",
-      tech: ["HTML5", "CSS3", "Responsive Design", "Flexbox"],
+      tech: ["HTML5", "CSS3", "Next.js", "Flexbox"],
       link: "https://github.com/Jorge-Loyo/tienda-reposteria",
     },
     {

@@ -27,3 +27,13 @@
   color: #ccc;
   text-align: center;
 }
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;       /* Círculo perfecto */
+  object-fit: cover;        /* Evita que la foto se estire/deforme */
+  border: 4px solid #333;   /* Borde elegante */
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Sombra suave */
+}

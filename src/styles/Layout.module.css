@@ -7,21 +7,21 @@
   
   /* Centrado Flexbox */
   display: flex;
-  flex-direction: column; /* Apila de arriba abajo */
-  align-items: center;    /* Centra horizontalmente a los hijos */
+  flex-direction: column;
+  align-items: center;
   
-  background-color: #0a0a0a;
+  /* background-color: #0a0a0a;  <--- ¡ESTA LÍNEA ERA LA CULPABLE! BORRALA */
+  background-color: transparent; /* O pon esto para asegurar transparencia */
+  
   color: #e5e5e5;
   font-family: 'Inter', sans-serif;
 }
 
 .content {
   width: 100%;
-  max-width: 1200px; /* Ancho máximo para que no se vea eterno en monitores grandes */
+  max-width: 1200px;
   padding: 40px 20px;
   box-sizing: border-box;
-  
-  /* Asegura que el contenido interno también se centre si es necesario */
   display: flex;
   flex-direction: column;
 }

@@ -8,6 +8,7 @@ import Layout from './components/Layout';
 import Navbar from './components/Navbar';
 import ChatInterface from './components/ChatInterface';
 import Projects from './components/Projects';
+import StarBackground from './components/StarBackground';
 
 // Datos y Estilos
 import { cvData } from './data/cv';
@@ -23,6 +24,7 @@ function App() {
   return (
     <BrowserRouter>
       <Layout>
+        <StarBackground />
         <header className={styles.header}>
           {/* AQUÍ USAMOS 'motion': Cambiamos div por motion.div */}
           <motion.div
@@ -32,6 +34,15 @@ function App() {
               visible: { transition: { staggerChildren: 0.2 } }
             }}
           >
+            {/* --- AQUÍ AGREGAMOS LA FOTO --- */}
+            <motion.img 
+              src={cvData.profile.avatar} 
+              alt="Foto de Perfil" 
+              className={styles.avatar}
+              variants={fadeInUp} // Usamos la misma animación de entrada
+              whileHover={{ scale: 1.05, borderColor: "#e5e5e5" }} // Efecto al pasar el mouse
+            />           
+            
             {/* También aquí: h1 -> motion.h1 */}
             <motion.h1 variants={fadeInUp} className={styles.title}>
               {cvData.profile.name}
