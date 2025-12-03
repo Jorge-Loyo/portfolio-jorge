@@ -44,7 +44,7 @@ export const cvData = {
       id: 1, // Lo ponemos primero porque "Agendarte" suena a App completa (Full Stack)
       name: "Agendarte",
       desc: "Plataforma integral de gestión de turnos y reservas. Solución diseñada para optimizar la organización de agendas, permitiendo a los usuarios reservar citas en tiempo real y a los administradores gestionar disponibilidad.",
-      tech: ["React", "Node.js", "SQL", "UX/UI"], // Ajusta si usaste Python/Mongo
+      tech: ["Angular", "Node.js", "SQL", "UX/UI"], // Ajusta si usaste Python/Mongo
       link: "https://github.com/Jorge-Loyo/Agendarte",
     },
     {
