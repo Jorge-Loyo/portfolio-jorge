@@ -1,0 +1,25 @@
+/* src/index.css */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  
+  /* Esquema de colores base */
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #0a0a0a; /* El mismo fondo oscuro de tu layout */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden; /* Evita scroll horizontal accidental */
+}
+
+#root {
+  width: 100%; /* Esto es vital: permite que React use toda la pantalla */
+  margin: 0;
+  padding: 0;
+}

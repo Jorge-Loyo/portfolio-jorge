@@ -1,0 +1,29 @@
+/* src/styles/App.module.css */
+
+.header {
+  margin-bottom: 40px;
+  text-align: center; /* Esto centra el texto y los botones del Navbar */
+  width: 100%;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.role {
+  font-size: 1.5rem;
+  color: #888;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+
+.summary {
+  margin: 30px auto; /* "auto" a los lados centra el bloque */
+  max-width: 800px;  /* Limita el ancho del párrafo */
+  line-height: 1.6;
+  color: #ccc;
+  text-align: center;
+}

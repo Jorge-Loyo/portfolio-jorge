@@ -1,0 +1,25 @@
+{
+  "profile": {
+    "name": "Jorge Antonio Loyo Nayati",
+    "role": "Desarrollador de Software | Especialista en Sistemas",
+    "location": "San Telmo, CABA, Buenos Aires",
+    "email": "Jorgenayati@gmail.com",
+    "github": "https://github.com/Jorge-Loyo",
+    "summary": "Profesional en transición al desarrollo de software con sólida experiencia en gestión y ERP (Odoo). Combino lógica de negocio con habilidades técnicas en JS, React y Python para crear soluciones reales."
+  },
+  "skills": [
+    "JavaScript", "React", "Python", "SQL", "AWS Cloud", "Odoo ERP", "Power BI"
+  ],
+  "experience_highlight": [
+    {
+      "role": "Responsable de Sistemas / Analista",
+      "company": "CMI S.A",
+      "desc": "Implementación de ERP Odoo, soporte a +500 usuarios y gestión de infraestructura IT."
+    }
+  ],
+  "education": {
+    "degree": "Tecnicatura Superior en Desarrollo de Software",
+    "institution": "IFTS 11",
+    "status": "En curso (2023 - Presente)"
+  }
+}

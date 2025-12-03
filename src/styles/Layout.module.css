@@ -1,0 +1,27 @@
+/* src/styles/Layout.module.css */
+
+.container {
+  /* Ocupar toda la pantalla obligatoriamente */
+  width: 100vw; 
+  min-height: 100vh;
+  
+  /* Centrado Flexbox */
+  display: flex;
+  flex-direction: column; /* Apila de arriba abajo */
+  align-items: center;    /* Centra horizontalmente a los hijos */
+  
+  background-color: #0a0a0a;
+  color: #e5e5e5;
+  font-family: 'Inter', sans-serif;
+}
+
+.content {
+  width: 100%;
+  max-width: 1200px; /* Ancho máximo para que no se vea eterno en monitores grandes */
+  padding: 40px 20px;
+  box-sizing: border-box;
+  
+  /* Asegura que el contenido interno también se centre si es necesario */
+  display: flex;
+  flex-direction: column;
+}
