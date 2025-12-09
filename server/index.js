@@ -1,89 +1,83 @@
 // server/index.js
-require("dotenv").config();
-const express = require("express");
-const cors = require("cors");
-const { GoogleGenerativeAI } = require("@google/generative-ai");
-
-// --- AGREGAR ESTO PARA DEBUG ---
-console.log("------------------------------------------------");
-console.log("🔍 DIAGNÓSTICO DE CLAVE:");
-if (!process.env.GEMINI_API_KEY) {
-  console.error(
-    "❌ ERROR CRÍTICO: La variable GEMINI_API_KEY está vacía o no existe."
-  );
-} else {
-  console.log(
-    "✅ La clave existe y empieza por:",
-    process.env.GEMINI_API_KEY.substring(0, 5) + "..."
-  );
-}
-console.log("------------------------------------------------");
-// -------------------------------
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 const app = express();
-app.use(cors()); // Permite que React (puerto 5173) hable con este servidor
 app.use(express.json());
+app.use(cors());
 
-// Configuración de Gemini
+// --- CONFIGURACIÓN DE IA ---
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+
+// Usamos el modelo que funcionó en tu cuenta
 const model = genAI.getGenerativeModel({ model: "gemini-flash-lite-latest" });
 
-// CONTEXTO: Lo que la IA sabe de ti
-// (Más adelante podemos hacer que lea esto directamente del archivo cv.json)
-const portfolioContext = `
-  TurkoDV: El asistente virtual del portafolio de Jorge Antonio Loyo Nayati.
-  OBJETIVO: Responder preguntas de reclutadores o colegas sobre la experiencia de Jorge para que lo contraten como Desarrollador.
+// --- DATOS DEL CV (El "Cerebro" de la IA) ---
+// Aquí pegamos la información actualizada para que la IA la tenga a mano
+const cvData = {
+  profile: {
+    name: "Jorge Loyo",
+    role: "Desarrollador Full Stack",
+    age: 31, // <--- ¡AQUÍ ESTÁ EL DATO IMPORTANTE!
+    birthDate: "07 de octubre de 1994",
+    origin: "El Tigre, Anzoátegui, Venezuela",
+    location: "Buenos Aires, Argentina",
+    workStatus: "Documentación legal al día para trabajar en Argentina",
+    summary: "Desarrollador Full Stack de 31 años con sólida experiencia en gestión de sistemas y ERPs (Odoo). Experto en SQL, React y Node.js."
+  },
+  skills: [
+    "JavaScript", "Node.js", "React", "SQL", "MySQL", "PostgreSQL",
+    "MongoDB", "Firebase", "AWS Cloud", "Google Cloud", 
+    "Odoo ERP", "Jira", "Trello", "Power BI", "Git", "Postman"
+  ],
+  softSkills: [
+    "Liderazgo", "Trabajo en equipo", "Comunicación efectiva", 
+    "Organización", "Pensamiento crítico", "Adaptabilidad"
+  ],
+  projects: [
+    {
+      name: "Agendarte",
+      desc: "Sistema de gestión de reservas. El mayor desafío fue diseñar la base de datos SQL para evitar solapamiento de horarios y manejar concurrencia."
+    },
+    {
+      name: "Portfolio con IA",
+      desc: "Integración de IA Gemini con React y Node.js. Implementé una arquitectura Full Stack segura separando frontend y backend."
+    },
+    {
+      name: "English Memory",
+      desc: "Juego de lógica con JS Vanilla, manejando estados complejos del DOM."
+    }
+  ]
+};
 
-  PERFIL PROFESIONAL:
-  - Profesional de Sistemas con sólida experiencia en gestión de ERP (especializado en Odoo).
-  - Transición exitosa de gestión de procesos (compras/farmacia) a Desarrollo de Software.
-  - Enfoque: Soluciones tecnológicas que resuelven problemas reales de negocio.
-  - Ubicación: San Telmo, CABA, Buenos Aires.
-  - Contacto: Jorgenayati@gmail.com | 11 6557 6344 | GitHub: Jorge-Loyo
+// --- RUTA DEL CHAT ---
+app.post('/chat', async (req, res) => {
+  const { message } = req.body;
 
-  HABILIDADES TÉCNICAS (HARD SKILLS):
-  - Lenguajes: JavaScript (Frontend), React (Básico/Aprendiendo), Python (Básico), C# (Básico).
-  - Backend & Datos: SQL (Intermedio), MySQL, PostgreSQL, Node.js.
-  - Cloud & Herramientas: AWS Cloud (Fundamentos), Git, Postman, VS Code, Odoo ERP (Avanzado/Implementador).
-  - Business Intelligence: Power BI, Excel Experto.
-
-  EXPERIENCIA LABORAL:
-  1. Responsable de Compras | Vooraf Worden (08/2025 - 10/2025)
-     - Optimización de costos y procesos de abastecimiento.
-     - Gestión de normas ISO 9001.
-
-  2. Responsable de Sistemas / Analista de Ventas | CMI S.A (05/2023 - 07/2025)
-     - LOGRO CLAVE: Lideró la implementación del sistema ERP Odoo.
-     - Creación de Intranet corporativa y sistemas de tickets.
-     - Administración de servidores y soporte a +500 usuarios.
-     - Gestión de licitaciones públicas y documentación técnica.
-
-  3. Encargado Administrativo de Farmacia | CMI - Hospital Naval (07/2018 - 05/2023)
-     - Gestión de stock bajo normas ANMAT e ISO 9001.
-     - Liderazgo de equipos y reportes mensuales.
-
-  EDUCACIÓN:
-  - Desarrollo de Software | IFTS 11 (2023 - Presente/En curso).
-  - Cursos: Frontend con JS (Talento Tech), AWS Cloud Fundamentos, SQL Intermedio.
-
-  REGLAS DE RESPUESTA:
-  - Responde siempre en primera persona del plural ("Nosotros" o "Jorge") o tercera persona neutral, pero muy profesional.
-  - Sé conciso (máximo 3 o 4 oraciones).
-  - Si preguntan por Odoo, destaca tu experiencia implementándolo.
-  - Si preguntan por tu nivel de React, sé honesto: "Estoy en proceso de aprendizaje avanzado, construyendo este portafolio con ello".
-`;
-
-app.post("/chat", async (req, res) => {
   try {
-    const { message } = req.body;
-
-    // Crear el prompt combinando el contexto + la pregunta del usuario
+    // Construimos la instrucción para la IA
     const prompt = `
-      ${portfolioContext}
+      Actúa como Jorge Loyo (o su asistente virtual). Responde en primera persona de forma profesional y amable.
       
-      USUARIO PREGUNTA: "${message}"
+      INFORMACIÓN DE JORGE:
+      - Edad: ${cvData.profile.age} años.
+      - Origen: ${cvData.profile.origin}.
+      - Estado Legal: ${cvData.profile.workStatus}.
+      - Experiencia: ${cvData.profile.summary}.
+      - Habilidades Técnicas: ${cvData.skills.join(", ")}.
+      - Habilidades Blandas: ${cvData.softSkills.join(", ")}.
       
-      RESPUESTA (Máximo 3 oraciones):
+      PROYECTOS DESTACADOS:
+      ${JSON.stringify(cvData.projects)}
+
+      INSTRUCCIONES:
+      - Si te preguntan la edad, dila claramente.
+      - Si preguntan por proyectos, usa los detalles técnicos provistos.
+      - Sé conciso pero informativo.
+
+      PREGUNTA DEL USUARIO: "${message}"
     `;
 
     const result = await model.generateContent(prompt);
@@ -91,15 +85,14 @@ app.post("/chat", async (req, res) => {
     const text = response.text();
 
     res.json({ reply: text });
+
   } catch (error) {
-    console.error("Error en Gemini:", error);
-    res
-      .status(500)
-      .json({ error: "Lo siento, tuve un error procesando tu solicitud." });
+    console.error("Error en el servidor:", error);
+    res.status(500).json({ error: "Error procesando la respuesta", details: error.message });
   }
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
-  console.log(`✅ Servidor Backend corriendo en http://localhost:${PORT}`);
+  console.log(`✅ Servidor IA corriendo en puerto ${PORT}`);
 });
