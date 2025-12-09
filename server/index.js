@@ -4,6 +4,22 @@ const express = require("express");
 const cors = require("cors");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
+// --- AGREGAR ESTO PARA DEBUG ---
+console.log("------------------------------------------------");
+console.log("🔍 DIAGNÓSTICO DE CLAVE:");
+if (!process.env.GEMINI_API_KEY) {
+  console.error(
+    "❌ ERROR CRÍTICO: La variable GEMINI_API_KEY está vacía o no existe."
+  );
+} else {
+  console.log(
+    "✅ La clave existe y empieza por:",
+    process.env.GEMINI_API_KEY.substring(0, 5) + "..."
+  );
+}
+console.log("------------------------------------------------");
+// -------------------------------
+
 const app = express();
 app.use(cors()); // Permite que React (puerto 5173) hable con este servidor
 app.use(express.json());
