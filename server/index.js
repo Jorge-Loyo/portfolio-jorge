@@ -31,7 +31,7 @@ const model = genAI.getGenerativeModel({ model: "gemini-flash-lite-latest" });
 // CONTEXTO: Lo que la IA sabe de ti
 // (Más adelante podemos hacer que lea esto directamente del archivo cv.json)
 const portfolioContext = `
-  ERES: El asistente virtual del portafolio de Jorge Antonio Loyo Nayati.
+  TurkoDV: El asistente virtual del portafolio de Jorge Antonio Loyo Nayati.
   OBJETIVO: Responder preguntas de reclutadores o colegas sobre la experiencia de Jorge para que lo contraten como Desarrollador.
 
   PERFIL PROFESIONAL:

@@ -3,13 +3,19 @@
 export const cvData = {
   profile: {
     name: "Jorge Loyo",
-    role: "Desarrollador de Software | Especialista en Sistemas",
+    role: "Desarrollador Full Stack | Especialista en Sistemas",
     location: "San Telmo, CABA, Argentina",
     email: "Jorgenayati@gmail.com",
+    phone: "+54 9 11 6557 6344",
     github: "https://github.com/Jorge-Loyo",
     avatar: "/perfil.jpg",
+    birthDate: "1994-10-07",
+    age: 31,
+    origin: "El Tigre, Anzoátegui, Venezuela",
+    workStatus: "Documentación legal al día para trabajar en Argentina",
+
     summary:
-      "Profesional en transición al desarrollo de software con sólida experiencia en gestión y ERP (Odoo). Combino lógica de negocio con habilidades técnicas en JS, React y Python para crear soluciones reales.",
+      "Desarrollador Full Stack de 31 años con sólida experiencia en gestión de sistemas y ERPs. Experto en traducir lógica de negocio compleja (SQL, Odoo) a soluciones web modernas (React, Node.js). Me destaco por mi capacidad de liderazgo y visión integral del ciclo de vida del software, desde la base de datos hasta la experiencia de usuario.",
   },
 
   socials: [
@@ -24,7 +30,6 @@ export const cvData = {
       id: 2,
       name: "WhatsApp",
       value: "+54 9 11 6557 6344",
-      // El formato wa.me requiere el número internacional sin + ni espacios
       link: "https://wa.me/5491165576344",
       icon: "MessageCircle",
     },
@@ -39,22 +44,35 @@ export const cvData = {
       id: 4,
       name: "LinkedIn",
       value: "Jorge Loyo",
-      // Reemplaza esto con tu link real de LinkedIn cuando lo tengas
-      link: "https://www.linkedin.com/in/jorge-antonio-loyo-nayati/",
+      link: "https://www.linkedin.com/",
       icon: "Linkedin",
     },
   ],
 
+  // SKILLS CLASIFICADAS (Para que la IA sepa qué eres)
   skills: [
-    { name: "JavaScript", level: "Intermedio" },
-    { name: "React", level: "Aprendiendo" },
-    { name: "Node.js", level: "Básico" },
-    { name: "Python", level: "Básico" },
-    { name: "SQL", level: "Intermedio" },
-    { name: "Odoo ERP", level: "Avanzado" },
-    { name: "AWS Cloud", level: "Fundamentos" },
-    { name: "Git / GitHub", level: "Intermedio" },
+    { name: "JavaScript / Node.js", level: "Avanzado" },
+    { name: "React / Angular", level: "Intermedio" },
+    { name: "Python / FastAPI", level: "Intermedio" },
+    { name: "C#", level: "Básico" },
+    { name: "SQL / MySQL / PostgreSQL", level: "Avanzado" },
+    { name: "MongoDB / Firebase", level: "Intermedio" },
+    { name: "AWS / Google Cloud", level: "Fundamentos" },
+    { name: "Odoo ERP", level: "Experto" },
+    { name: "Power BI", level: "Intermedio" },
+    { name: "Herramientas", level: "Git, Jira, Trello, Postman" },
   ],
+
+  // HABILIDADES BLANDAS (Soft Skills)
+  softSkills: [
+    "Liderazgo y Trabajo en Equipo",
+    "Pensamiento Crítico y Resolución de Problemas",
+    "Adaptabilidad y Flexibilidad",
+    "Comunicación Efectiva",
+    "Organización y Puntualidad",
+    "Orientación al Cliente/Usuario",
+  ],
+
   experience: [
     {
       id: 1,
@@ -62,7 +80,7 @@ export const cvData = {
       company: "CMI S.A",
       period: "05/2023 - 07/2025",
       description:
-        "Lideré la implementación del ERP Odoo, soporte técnico a +500 usuarios y administración de servidores. Desarrollo de herramientas digitales para automatizar carga documental.",
+        "Liderazgo técnico en la migración y configuración de Odoo ERP. Soporte a +500 usuarios, administración de bases de datos PostgreSQL y optimización de flujos de trabajo con Python.",
     },
     {
       id: 2,
@@ -70,51 +88,45 @@ export const cvData = {
       company: "Vooraf Worden",
       period: "08/2025 - 10/2025",
       description:
-        "Optimización de costos y procesos de abastecimiento. Gestión de normas ISO 9001.",
+        "Gestión estratégica de proveedores y optimización de costos. Uso intensivo de herramientas de análisis de datos para la toma de decisiones.",
     },
   ],
+
   projects: [
     {
-      id: 1, // Lo ponemos primero porque "Agendarte" suena a App completa (Full Stack)
+      id: 1,
       name: "Agendarte",
-      desc: "Plataforma integral de gestión de turnos y reservas. Solución diseñada para optimizar la organización de agendas, permitiendo a los usuarios reservar citas en tiempo real y a los administradores gestionar disponibilidad.",
-      tech: ["Angular", "Node.js", "SQL", "UX/UI"], // Ajusta si usaste Python/Mongo
+      desc: "Sistema integral de gestión de reservas. Lo más desafiante fue diseñar la arquitectura de la base de datos (SQL) para manejar la concurrencia de citas y evitar solapamientos en tiempo real, asegurando la integridad de los datos.",
+      tech: ["React", "Node.js", "SQL", "Auth"],
       link: "https://github.com/Jorge-Loyo/Agendarte",
     },
     {
-      id: 1,
-      name: "Portfolio Inteligente con IA",
-      desc: "Web personal interactiva desarrollada con React 19 y Node.js. Integra el modelo Gemini 2.0 Flash de Google para responder preguntas sobre mi perfil en tiempo real, con animaciones en Framer Motion.",
-      tech: ["React", "Node.js", "Gemini API", "Framer Motion"],
+      id: 2,
+      name: "Portfolio con IA",
+      desc: "Implementación Full Stack con arquitectura CI/CD (Vercel + Render). El reto principal fue integrar la API de Gemini 2.0 manejando el contexto de la conversación y las cuotas de uso mediante un backend seguro en Node.js.",
+      tech: ["React", "Gemini AI", "Node.js", "CI/CD"],
       link: "https://github.com/Jorge-Loyo/portfolio-jorge",
     },
     {
-      id: 2,
-      name: "English Memory Game",
-      desc: "Juego interactivo de memoria diseñado para facilitar el aprendizaje de vocabulario en inglés. Implementa lógica de juego en JavaScript (DOM manipulation) y gestión de estados visuales.",
-      tech: ["JavaScript", "HTML5", "CSS3", "Game Logic"],
+      id: 3,
+      name: "English Memory",
+      desc: "Juego de lógica desarrollado con JavaScript Vanilla. Se implementaron algoritmos de manipulación del DOM y gestión de estado local para controlar la mecánica del juego, los tiempos y el sistema de puntuación.",
+      tech: ["JavaScript", "DOM", "CSS3", "Logic"],
       link: "https://github.com/Jorge-Loyo/English_Memory",
     },
     {
-      id: 3,
+      id: 4,
       name: "Tienda Repostería",
-      desc: "Landing page responsive para un comercio gastronómico. Enfocada en diseño UI/UX atractivo, estructura semántica y maquetación adaptable a dispositivos móviles.",
-      tech: ["HTML5", "CSS3", "Next.js", "Flexbox"],
+      desc: "E-commerce front-end enfocado en UX/UI. Uso avanzado de CSS Grid y Flexbox para garantizar una experiencia totalmente responsive y accesible en cualquier dispositivo móvil.",
+      tech: ["HTML5", "CSS3", "Responsive", "UX/UI"],
       link: "https://github.com/Jorge-Loyo/tienda-reposteria",
     },
     {
-      id: 4,
-      name: "Umbrella Project",
-      desc: "Proyecto de maquetación web avanzada. Demostración de habilidades en estructuración de contenido y estilización moderna para sitios web corporativos o temáticos.",
-      tech: ["HTML5", "CSS3", "Web Layout", "Git"],
-      link: "https://github.com/Jorge-Loyo/umbrella_project",
-    },
-    {
       id: 5,
-      name: "Implementación Odoo ERP",
-      desc: "Experiencia profesional en configuración de Odoo para CMI S.A. Automatización de flujos de compras e inventario para optimizar la gestión empresarial.",
-      tech: ["Odoo", "Python", "PostgreSQL", "ERP"],
-      link: "https://github.com/Jorge-Loyo", // Link a tu perfil general ya que es privado
+      name: "Umbrella Project",
+      desc: "Maquetación corporativa de alto nivel. Demostración de estructura semántica HTML5 y buenas prácticas de SEO on-page, optimizando la carga y el posicionamiento.",
+      tech: ["HTML5", "Sass", "BEM", "Git"],
+      link: "https://github.com/Jorge-Loyo/umbrella_project",
     },
   ],
 };
