@@ -12,6 +12,9 @@ import StarBackground from './components/StarBackground';
 import Contact from './components/Contact';
 import ScrollToTop from './components/ScrollToTop';
 
+// i18n
+import { LanguageProvider, useLanguage } from './i18n/LanguageContext';
+
 // Datos y Estilos
 import { cvData } from './data/cv';
 import styles from './styles/App.module.css';
@@ -22,15 +25,15 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
 };
 
-function App() {
+function AppContent() {
+  const { t } = useLanguage();
+
   return (
     <BrowserRouter>
-    <ScrollToTop /> {/* <--- 2. PONERLO AQUÍ (El orden importa: dentro del Router) */}
+      <ScrollToTop />
       <StarBackground />
       <Layout>
-        <StarBackground />
         <header className={styles.header}>
-          {/* AQUÍ USAMOS 'motion': Cambiamos div por motion.div */}
           <motion.div
             initial="hidden"
             animate="visible"
@@ -38,22 +41,20 @@ function App() {
               visible: { transition: { staggerChildren: 0.2 } }
             }}
           >
-            {/* --- AQUÍ AGREGAMOS LA FOTO --- */}
             <motion.img 
               src={cvData.profile.avatar} 
               alt="Foto de Perfil" 
               className={styles.avatar}
-              variants={fadeInUp} // Usamos la misma animación de entrada
-              whileHover={{ scale: 1.05, borderColor: "#e5e5e5" }} // Efecto al pasar el mouse
+              variants={fadeInUp}
+              whileHover={{ scale: 1.05, borderColor: "#e5e5e5" }}
             />           
             
-            {/* También aquí: h1 -> motion.h1 */}
             <motion.h1 variants={fadeInUp} className={styles.title}>
               {cvData.profile.name}
             </motion.h1>
             
             <motion.h2 variants={fadeInUp} className={styles.role}>
-              {cvData.profile.role}
+              {t.header.role}
             </motion.h2>
             
             <Navbar />
@@ -81,6 +82,14 @@ function App() {
 
       </Layout>
     </BrowserRouter>
+  );
+}
+
+function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
   );
 }
 

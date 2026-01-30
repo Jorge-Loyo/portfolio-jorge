@@ -2,11 +2,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Send } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '../i18n/LanguageContext';
 import styles from '../styles/ChatInterface.module.css';
 
 const ChatInterface = () => {
+  const { t } = useLanguage();
   const [messages, setMessages] = useState([
-    { id: 1, text: "Hola, soy la IA de Jorge. ¿En qué puedo ayudarte hoy?", sender: 'bot' }
+    { id: 1, text: t.chat.greeting, sender: 'bot' }
   ]);
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -90,7 +92,7 @@ const ChatInterface = () => {
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Pregunta sobre mis proyectos..."
+          placeholder={t.chat.placeholder}
           className={styles.input}
           disabled={isLoading}
         />

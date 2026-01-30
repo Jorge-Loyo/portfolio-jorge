@@ -1,10 +1,13 @@
 // src/components/Projects.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../i18n/LanguageContext';
 import { cvData } from '../data/cv';
 import styles from '../styles/Projects.module.css';
 
 const Projects = () => {
+  const { t } = useLanguage();
+
   return (
     <motion.div 
       className={styles.container}
@@ -13,7 +16,7 @@ const Projects = () => {
       exit={{ opacity: 0, x: -20 }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className={styles.title}>Proyectos Destacados</h2>
+      <h2 className={styles.title}>{t.projects.title}</h2>
       
       <div className={styles.grid}>
         {cvData.projects.map((proj) => (

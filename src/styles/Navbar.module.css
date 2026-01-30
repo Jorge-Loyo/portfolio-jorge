@@ -2,6 +2,7 @@
 .nav {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 20px;
   margin-bottom: 40px;
 }
@@ -18,4 +19,21 @@
 .link:hover {
   color: #fff;
   background-color: #222;
+}
+
+.langButton {
+  background-color: #222;
+  color: #e5e5e5;
+  border: 1px solid #333;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.langButton:hover {
+  background-color: #333;
+  border-color: #666;
 }

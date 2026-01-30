@@ -2,10 +2,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MessageCircle, Github, Linkedin, ExternalLink } from 'lucide-react';
+import { useLanguage } from '../i18n/LanguageContext';
 import { cvData } from '../data/cv';
 import styles from '../styles/Contact.module.css';
 
-// Mapa de iconos para usar el string del JSON
 const iconMap = {
   Mail: Mail,
   MessageCircle: MessageCircle,
@@ -14,6 +14,8 @@ const iconMap = {
 };
 
 const Contact = () => {
+  const { t } = useLanguage();
+
   return (
     <motion.div 
       className={styles.container}
@@ -22,9 +24,9 @@ const Contact = () => {
       exit={{ opacity: 0, x: -20 }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className={styles.title}>Hablemos de negocios</h2>
+      <h2 className={styles.title}>{t.contact.title}</h2>
       <p style={{ color: '#aaa', marginBottom: '30px' }}>
-        Estoy disponible para proyectos freelance, colaboraciones o contratación full-time.
+        {t.contact.subtitle}
       </p>
       
       <div className={styles.grid}>
