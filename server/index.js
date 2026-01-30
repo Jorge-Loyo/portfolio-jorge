@@ -15,39 +15,164 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-flash-lite-latest" });
 
 // --- DATOS DEL CV (El "Cerebro" de la IA) ---
-// Aquí pegamos la información actualizada para que la IA la tenga a mano
 const cvData = {
   profile: {
-    name: "Jorge Loyo",
-    role: "Desarrollador Full Stack",
-    age: 31, // <--- ¡AQUÍ ESTÁ EL DATO IMPORTANTE!
+    name: "Jorge Antonio Loyo Nayati",
+    role: "Desarrollador Full Stack | Especialista en Sistemas",
+    age: 31,
     birthDate: "07 de octubre de 1994",
     origin: "El Tigre, Anzoátegui, Venezuela",
-    location: "Buenos Aires, Argentina",
+    location: "San Telmo, CABA, Buenos Aires, Argentina",
+    email: "Jorgenayati@gmail.com",
+    phone: "+54 9 11 6557 6344",
     workStatus: "Documentación legal al día para trabajar en Argentina",
-    summary: "Desarrollador Full Stack de 31 años con sólida experiencia en gestión de sistemas y ERPs (Odoo). Experto en SQL, React y Node.js."
+    summary: "Desarrollador Full Stack de 31 años con sólida experiencia en gestión de sistemas y ERPs. Experto en traducir lógica de negocio compleja (SQL, Odoo) a soluciones web modernas (React, Node.js). Me destaco por mi capacidad de liderazgo y visión integral del ciclo de vida del software."
   },
-  skills: [
-    "JavaScript", "Node.js", "React", "SQL", "MySQL", "PostgreSQL",
-    "MongoDB", "Firebase", "AWS Cloud", "Google Cloud", 
-    "Odoo ERP", "Jira", "Trello", "Power BI", "Git", "Postman"
+  
+  availability: {
+    status: "Disponible para incorporación inmediata",
+    modality: "Remoto preferido, pero abierto a híbrido o presencial",
+    schedule: "Full-time, Part-time o Freelance"
+  },
+  
+  rates: {
+    salary: "Desde $1.800.000 ARS mensuales",
+    freelance: "$8 USD por hora",
+    currency: "Cotizo en USD, cobro en ARS"
+  },
+  
+  languages: [
+    { name: "Español", level: "Nativo" },
+    { name: "Inglés", level: "Básico A2 (en proceso de mejora)" }
   ],
+  
+  certifications: [
+    "AWS Cloud",
+    "Python",
+    "SQL",
+    "Todos los cursos del CV tienen certificación e insignias"
+  ],
+  
+  industries: [
+    "Compras",
+    "Ventas",
+    "Logística",
+    "Operaciones",
+    "Sistemas",
+    "Finanzas"
+  ],
+  
+  specializations: [
+    "Sistemas",
+    "Desarrollo de Proyectos",
+    "Análisis de Datos"
+  ],
+  
+  interests: {
+    projects: [
+      "Desarrollo de mejoras operacionales",
+      "Mejoras o creación de herramientas digitales",
+      "Creación de métricas",
+      "Sistemas de gestión empresarial"
+    ],
+    specialization: "Backend y Análisis de Datos"
+  },
+  
+  portfolio: {
+    live: "Varios proyectos con demo online y aplicaciones de escritorio portables",
+    url: "https://github.com/Jorge-Loyo"
+  },
+  
+  education: {
+    degree: "Tecnicatura Superior en Desarrollo de Software",
+    institution: "IFTS 11 (Instituto de Formación Técnica Superior)",
+    status: "En curso",
+    period: "2023 - Presente",
+    location: "Buenos Aires, Argentina"
+  },
+  
+  skills: {
+    languages: ["JavaScript", "Python", "C#", "SQL"],
+    frontend: ["React", "Angular", "HTML5", "CSS3", "Sass"],
+    backend: ["Node.js", "Express", "FastAPI"],
+    databases: ["MySQL", "PostgreSQL", "MongoDB", "Firebase"],
+    cloud: ["AWS Cloud", "Google Cloud"],
+    erp: ["Odoo ERP (Experto)"],
+    tools: ["Git", "Jira", "Trello", "Power BI", "Postman"],
+    levels: {
+      "JavaScript/Node.js": "Avanzado",
+      "React/Angular": "Intermedio",
+      "Python/FastAPI": "Intermedio",
+      "SQL/PostgreSQL/MySQL": "Avanzado",
+      "Odoo ERP": "Experto",
+      "C#": "Básico"
+    }
+  },
+  
   softSkills: [
-    "Liderazgo", "Trabajo en equipo", "Comunicación efectiva", 
-    "Organización", "Pensamiento crítico", "Adaptabilidad"
+    "Liderazgo y Trabajo en Equipo",
+    "Pensamiento Crítico y Resolución de Problemas",
+    "Adaptabilidad y Flexibilidad",
+    "Comunicación Efectiva",
+    "Organización y Puntualidad",
+    "Orientación al Cliente/Usuario"
   ],
+  
+  experience: [
+    {
+      role: "Responsable de Sistemas / Analista",
+      company: "CMI S.A",
+      period: "Mayo 2023 - Julio 2025",
+      achievements: [
+        "Liderazgo técnico en migración y configuración de Odoo ERP",
+        "Soporte a más de 500 usuarios",
+        "Administración de bases de datos PostgreSQL",
+        "Optimización de flujos de trabajo con Python",
+        "Gestión de infraestructura IT"
+      ]
+    },
+    {
+      role: "Responsable de Compras",
+      company: "Vooraf Worden",
+      period: "Agosto 2025 - Octubre 2025",
+      achievements: [
+        "Gestión estratégica de proveedores",
+        "Optimización de costos",
+        "Análisis de datos para toma de decisiones"
+      ]
+    }
+  ],
+  
   projects: [
     {
       name: "Agendarte",
-      desc: "Sistema de gestión de reservas. El mayor desafío fue diseñar la base de datos SQL para evitar solapamiento de horarios y manejar concurrencia."
+      desc: "Sistema integral de gestión de reservas. Desafío principal: diseñar arquitectura de base de datos SQL para manejar concurrencia de citas y evitar solapamientos en tiempo real, asegurando integridad de datos.",
+      tech: ["React", "Node.js", "SQL", "Auth"],
+      link: "https://github.com/Jorge-Loyo/Agendarte"
     },
     {
       name: "Portfolio con IA",
-      desc: "Integración de IA Gemini con React y Node.js. Implementé una arquitectura Full Stack segura separando frontend y backend."
+      desc: "Implementación Full Stack con arquitectura CI/CD (Vercel + Render). Integración de API Gemini 2.0 manejando contexto de conversación y cuotas de uso mediante backend seguro en Node.js.",
+      tech: ["React", "Gemini AI", "Node.js", "CI/CD"],
+      link: "https://github.com/Jorge-Loyo/portfolio-jorge"
     },
     {
       name: "English Memory",
-      desc: "Juego de lógica con JS Vanilla, manejando estados complejos del DOM."
+      desc: "Juego de lógica con JavaScript Vanilla. Implementación de algoritmos de manipulación del DOM y gestión de estado local para controlar mecánica del juego, tiempos y sistema de puntuación.",
+      tech: ["JavaScript", "DOM", "CSS3"],
+      link: "https://github.com/Jorge-Loyo/English_Memory"
+    },
+    {
+      name: "Tienda Repostería",
+      desc: "E-commerce front-end enfocado en UX/UI. Uso avanzado de CSS Grid y Flexbox para experiencia totalmente responsive y accesible.",
+      tech: ["HTML5", "CSS3", "Responsive"],
+      link: "https://github.com/Jorge-Loyo/tienda-reposteria"
+    },
+    {
+      name: "Umbrella Project",
+      desc: "Maquetación corporativa. Estructura semántica HTML5 y buenas prácticas de SEO on-page, optimizando carga y posicionamiento.",
+      tech: ["HTML5", "Sass", "BEM", "Git"],
+      link: "https://github.com/Jorge-Loyo/umbrella_project"
     }
   ]
 };
@@ -59,23 +184,95 @@ app.post('/chat', async (req, res) => {
   try {
     // Construimos la instrucción para la IA
     const prompt = `
-      Actúa como Jorge Loyo (o su asistente virtual). Responde en primera persona de forma profesional y amable.
+      Actúa como Jorge Antonio Loyo Nayati (o su asistente virtual). Responde en primera persona de forma profesional, amable y conversacional.
       
-      INFORMACIÓN DE JORGE:
-      - Edad: ${cvData.profile.age} años.
-      - Origen: ${cvData.profile.origin}.
-      - Estado Legal: ${cvData.profile.workStatus}.
-      - Experiencia: ${cvData.profile.summary}.
-      - Habilidades Técnicas: ${cvData.skills.join(", ")}.
-      - Habilidades Blandas: ${cvData.softSkills.join(", ")}.
+      === PERFIL PERSONAL ===
+      - Nombre completo: ${cvData.profile.name}
+      - Edad: ${cvData.profile.age} años (nacido el ${cvData.profile.birthDate})
+      - Origen: ${cvData.profile.origin}
+      - Ubicación actual: ${cvData.profile.location}
+      - Email: ${cvData.profile.email}
+      - Teléfono: ${cvData.profile.phone}
+      - GitHub: ${cvData.portfolio.url}
+      - Estado legal: ${cvData.profile.workStatus}
       
-      PROYECTOS DESTACADOS:
-      ${JSON.stringify(cvData.projects)}
+      === DISPONIBILIDAD ===
+      - Estado: ${cvData.availability.status}
+      - Modalidad: ${cvData.availability.modality}
+      - Horario: ${cvData.availability.schedule}
+      
+      === TARIFAS Y EXPECTATIVAS ===
+      - Salario esperado: ${cvData.rates.salary}
+      - Tarifa freelance: ${cvData.rates.freelance}
+      - Moneda: ${cvData.rates.currency}
+      
+      === IDIOMAS ===
+      ${cvData.languages.map(lang => `- ${lang.name}: ${lang.level}`).join("\n      ")}
+      
+      === CERTIFICACIONES ===
+      ${cvData.certifications.map(cert => `- ${cert}`).join("\n      ")}
+      
+      === SECTORES DE EXPERIENCIA ===
+      ${cvData.industries.join(", ")}
+      
+      === ESPECIALIZACIONES ===
+      ${cvData.specializations.join(", ")}
+      
+      === INTERESES PROFESIONALES ===
+      Proyectos de interés:
+      ${cvData.interests.projects.map(p => `- ${p}`).join("\n      ")}
+      Especialización objetivo: ${cvData.interests.specialization}
+      
+      === PORTAFOLIO ===
+      ${cvData.portfolio.live}
+      GitHub: ${cvData.portfolio.url}
+      
+      === FORMACIÓN ACADÉMICA ===
+      - Carrera: ${cvData.education.degree}
+      - Institución: ${cvData.education.institution}
+      - Estado: ${cvData.education.status} (${cvData.education.period})
+      - Ubicación: ${cvData.education.location}
+      
+      === HABILIDADES TÉCNICAS ===
+      Lenguajes: ${cvData.skills.languages.join(", ")}
+      Frontend: ${cvData.skills.frontend.join(", ")}
+      Backend: ${cvData.skills.backend.join(", ")}
+      Bases de Datos: ${cvData.skills.databases.join(", ")}
+      Cloud: ${cvData.skills.cloud.join(", ")}
+      ERP: ${cvData.skills.erp.join(", ")}
+      Herramientas: ${cvData.skills.tools.join(", ")}
+      
+      Niveles de dominio:
+      ${Object.entries(cvData.skills.levels).map(([tech, level]) => `- ${tech}: ${level}`).join("\n      ")}
+      
+      === HABILIDADES BLANDAS ===
+      ${cvData.softSkills.map(skill => `- ${skill}`).join("\n      ")}
+      
+      === EXPERIENCIA LABORAL ===
+      ${cvData.experience.map(exp => `
+      ${exp.role} en ${exp.company} (${exp.period}):
+      ${exp.achievements.map(ach => `  • ${ach}`).join("\n      ")}
+      `).join("\n")}
+      
+      === PROYECTOS DESTACADOS ===
+      ${cvData.projects.map(proj => `
+      ${proj.name}:
+      - Descripción: ${proj.desc}
+      - Tecnologías: ${proj.tech.join(", ")}
+      - Link: ${proj.link}
+      `).join("\n")}
 
-      INSTRUCCIONES:
-      - Si te preguntan la edad, dila claramente.
-      - Si preguntan por proyectos, usa los detalles técnicos provistos.
-      - Sé conciso pero informativo.
+      === INSTRUCCIONES DE RESPUESTA ===
+      1. Responde como si fueras Jorge, en primera persona
+      2. Sé específico con datos técnicos cuando pregunten por experiencia o proyectos
+      3. Si preguntan por disponibilidad, tarifas o modalidad, usa los datos exactos
+      4. Si preguntan por habilidades, menciona el nivel de dominio
+      5. Si preguntan por experiencia laboral, menciona logros concretos y sectores
+      6. Si preguntan por certificaciones, menciona AWS, Python y SQL
+      7. Enfatiza interés en Backend y Análisis de Datos si preguntan por especialización
+      8. Mantén respuestas concisas pero informativas (máximo 3-4 párrafos)
+      9. Si no tienes información sobre algo, sé honesto y sugiere contacto directo
+      10. Para empleadores: destaca disponibilidad inmediata y flexibilidad de modalidad
 
       PREGUNTA DEL USUARIO: "${message}"
     `;
@@ -95,4 +292,5 @@ app.post('/chat', async (req, res) => {
 const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
   console.log(`✅ Servidor IA corriendo en puerto ${PORT}`);
+  console.log(`🧠 Contexto cargado: ${cvData.projects.length} proyectos, ${cvData.experience.length} experiencias laborales`);
 });
