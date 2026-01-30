@@ -145,6 +145,12 @@ const cvData = {
   
   projects: [
     {
+      name: "Licitarte",
+      desc: "Sistema profesional de gestión de licitaciones farmacéuticas. Incluye análisis de márgenes en tiempo real con alertas visuales, módulo de métricas con ranking de causas de pérdidas, dashboard con 6 indicadores clave y catálogos configurables. Arquitectura escalable con SQLite local y PostgreSQL en producción.",
+      tech: ["Python", "Flask", "SQLite", "PostgreSQL", "JavaScript", "HTML5", "CSS3"],
+      link: "https://github.com/Jorge-Loyo/Licitarte"
+    },
+    {
       name: "Agendarte",
       desc: "Sistema integral de gestión de reservas. Desafío principal: diseñar arquitectura de base de datos SQL para manejar concurrencia de citas y evitar solapamientos en tiempo real, asegurando integridad de datos.",
       tech: ["React", "Node.js", "SQL", "Auth"],
