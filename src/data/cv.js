@@ -3,7 +3,7 @@
 export const cvData = {
   profile: {
     name: "Jorge Loyo",
-    role: "Desarrollador Full Stack | Especialista en Sistemas",
+    role: "Desarrollador de Software & Web | Analista Funcional - Analista de Datos Senior",
     location: "San Telmo, CABA, Argentina",
     email: "Jorgenayati@gmail.com",
     phone: "+54 9 11 6557 6344",
@@ -15,7 +15,7 @@ export const cvData = {
     workStatus: "Documentación legal al día para trabajar en Argentina",
 
     summary:
-      "Desarrollador Full Stack de 31 años con sólida experiencia en gestión de sistemas y ERPs. Experto en traducir lógica de negocio compleja (SQL, Odoo) a soluciones web modernas (React, Node.js). Me destaco por mi capacidad de liderazgo y visión integral del ciclo de vida del software, desde la base de datos hasta la experiencia de usuario.",
+      "Desarrollador Full Stack y Analista de Datos con experiencia en el diseño, desarrollo y despliegue de aplicaciones web, integración de APIs y manejo de bases de datos. He trabajado con SQL, Power BI, Excel y Python para el análisis de información y seguimiento de KPIs, y con tecnologías como React, Angular y Node.js para construir soluciones completas. Mi background técnico me permite conectar datos, negocio y desarrollo de software, aportando una visión integral y orientada a resultados.",
   },
 
   socials: [

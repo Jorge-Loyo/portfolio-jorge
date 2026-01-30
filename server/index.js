@@ -18,7 +18,7 @@ const model = genAI.getGenerativeModel({ model: "gemini-flash-lite-latest" });
 const cvData = {
   profile: {
     name: "Jorge Antonio Loyo Nayati",
-    role: "Desarrollador Full Stack | Especialista en Sistemas",
+    role: "Desarrollador de Software & Web | Analista Funcional - Analista de Datos Senior",
     age: 31,
     birthDate: "07 de octubre de 1994",
     origin: "El Tigre, Anzoátegui, Venezuela",
@@ -26,7 +26,7 @@ const cvData = {
     email: "Jorgenayati@gmail.com",
     phone: "+54 9 11 6557 6344",
     workStatus: "Documentación legal al día para trabajar en Argentina",
-    summary: "Desarrollador Full Stack de 31 años con sólida experiencia en gestión de sistemas y ERPs. Experto en traducir lógica de negocio compleja (SQL, Odoo) a soluciones web modernas (React, Node.js). Me destaco por mi capacidad de liderazgo y visión integral del ciclo de vida del software."
+    summary: "Desarrollador Full Stack y Analista de Datos con experiencia en el diseño, desarrollo y despliegue de aplicaciones web, integración de APIs y manejo de bases de datos. He trabajado con SQL, Power BI, Excel y Python para el análisis de información y seguimiento de KPIs, y con tecnologías como React, Angular y Node.js para construir soluciones completas. Mi background técnico me permite conectar datos, negocio y desarrollo de software, aportando una visión integral y orientada a resultados."
   },
   
   availability: {
