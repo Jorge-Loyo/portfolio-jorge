@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MessageCircle, Github, Linkedin, ExternalLink } from 'lucide-react';
+import { Mail, MessageCircle, Github, Linkedin, Globe, ExternalLink } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import { cvData } from '../data/cv';
 import styles from '../styles/Contact.module.css';
@@ -9,7 +9,8 @@ const iconMap = {
   Mail: Mail,
   MessageCircle: MessageCircle,
   Github: Github,
-  Linkedin: Linkedin
+  Linkedin: Linkedin,
+  Globe: Globe
 };
 
 const cardVariants = {

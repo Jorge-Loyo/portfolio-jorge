@@ -28,6 +28,7 @@ const cvData = {
     workStatus: "Documentación legal al día para trabajar en Argentina",
     linkedin: "https://www.linkedin.com/in/jorge-antonio-loyo-nayati/",
     github: "https://github.com/Jorge-Loyo",
+    consulting: "https://agilize-soluciones.vercel.app",
     summary: "Desarrollador Full Stack y Analista de Datos con más de 7 años de experiencia en el diseño, desarrollo e implementación de aplicaciones web de extremo a extremo. Especializado en construir sistemas desde cero —APIs, autenticación, lógica de negocio y arquitectura de bases de datos— combinando frontend, backend y soluciones orientadas a datos. Ha participado en sistemas productivos utilizados por más de 800 usuarios en entornos críticos del sector salud."
   },
 
@@ -258,8 +259,9 @@ app.post('/chat', async (req, res) => {
       Especialización objetivo: ${cvData.interests.specialization}
       
       === PORTAFOLIO ===
-      ${cvData.portfolio.live}
+      Portfolio: ${cvData.portfolio.live}
       GitHub: ${cvData.portfolio.url}
+      Consultoría: ${cvData.profile.consulting}
       
       === FORMACIÓN ACADÉMICA ===
       ${cvData.education.map(edu => `- ${edu.degree} - ${edu.institution} (${edu.period})`).join("\n      ")}

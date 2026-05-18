@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../i18n/LanguageContext';
 import { cvData } from '../data/cv';
-import { Briefcase, GraduationCap, Award, Cpu, Heart, Download } from 'lucide-react';
+import { Briefcase, GraduationCap, Award, Cpu, Heart } from 'lucide-react';
 import styles from '../styles/About.module.css';
 
 const sectionVariants = {
@@ -192,24 +192,6 @@ const About = () => {
             </motion.span>
           ))}
         </div>
-      </motion.div>
-
-      <motion.div
-        className={styles.downloadSection}
-        variants={sectionVariants}
-        initial="hidden"
-        animate="visible"
-        custom={7}
-      >
-        <a
-          href="https://raw.githubusercontent.com/Jorge-Loyo/portfolio-jorge/main/Document/CV%20Jorge%20Loyo.docx"
-          className={styles.downloadBtn}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Download size={18} />
-          {t.about.downloadCV}
-        </a>
       </motion.div>
     </div>
   );
