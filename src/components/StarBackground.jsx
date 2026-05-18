@@ -8,6 +8,67 @@ const COLORS = [
   '6, 182, 212',
 ];
 
+const drawRocket = (ctx, x, y, angle, scale, flamePhase) => {
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.rotate(angle);
+  ctx.scale(scale, scale);
+
+  const flameLen = 16 + Math.sin(flamePhase) * 6;
+
+  const grad = ctx.createLinearGradient(0, -flameLen, 0, 0);
+  grad.addColorStop(0, 'rgba(255, 200, 50, 0)');
+  grad.addColorStop(0.3, 'rgba(255, 150, 50, 0.6)');
+  grad.addColorStop(0.7, 'rgba(255, 100, 50, 0.8)');
+  grad.addColorStop(1, 'rgba(255, 200, 100, 1)');
+  ctx.fillStyle = grad;
+  ctx.beginPath();
+  ctx.moveTo(0, 0);
+  ctx.quadraticCurveTo(-6, -flameLen * 0.5, 0, -flameLen);
+  ctx.quadraticCurveTo(6, -flameLen * 0.5, 0, 0);
+  ctx.fill();
+
+  ctx.fillStyle = '#e5e5e5';
+  ctx.beginPath();
+  ctx.moveTo(0, -32);
+  ctx.lineTo(-10, -10);
+  ctx.lineTo(-7, 8);
+  ctx.lineTo(0, 12);
+  ctx.lineTo(7, 8);
+  ctx.lineTo(10, -10);
+  ctx.closePath();
+  ctx.fill();
+
+  ctx.fillStyle = '#a855f7';
+  ctx.beginPath();
+  ctx.moveTo(0, -26);
+  ctx.lineTo(-6, -14);
+  ctx.lineTo(6, -14);
+  ctx.closePath();
+  ctx.fill();
+
+  ctx.fillStyle = 'rgba(168, 85, 247, 0.15)';
+  ctx.beginPath();
+  ctx.arc(0, -4, 4, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.fillStyle = '#3b82f6';
+  ctx.beginPath();
+  ctx.moveTo(-7, 8);
+  ctx.lineTo(-12, 14);
+  ctx.lineTo(-7, 12);
+  ctx.closePath();
+  ctx.fill();
+  ctx.beginPath();
+  ctx.moveTo(7, 8);
+  ctx.lineTo(12, 14);
+  ctx.lineTo(7, 12);
+  ctx.closePath();
+  ctx.fill();
+
+  ctx.restore();
+};
+
 const StarBackground = () => {
   const canvasRef = useRef(null);
 
@@ -16,6 +77,41 @@ const StarBackground = () => {
     const ctx = canvas.getContext('2d');
     let animationId;
     let shootingStars = [];
+    let mouseX = -1;
+    let mouseY = -1;
+
+    const rockets = [];
+
+    const spawnRocket = () => {
+      const fromLeft = Math.random() > 0.5;
+      const baseY = 100 + Math.random() * (canvas.height * 0.6);
+      rockets.push({
+        x: fromLeft ? -60 : canvas.width + 60,
+        y: baseY,
+        targetY: baseY + (Math.random() - 0.5) * 200,
+        speed: 1.5 + Math.random() * 1.5,
+        angle: fromLeft ? -0.15 + Math.random() * 0.3 : Math.PI - (-0.15 + Math.random() * 0.3),
+        scale: 0.9 + Math.random() * 0.3,
+        trail: [],
+        alive: true,
+        spawnedClick: false,
+      });
+    };
+
+    const spawnClickRocket = (cx, cy) => {
+      const fromLeft = Math.random() > 0.5;
+      rockets.push({
+        x: fromLeft ? -60 : canvas.width + 60,
+        y: cy - 100 + Math.random() * 200,
+        targetY: cy,
+        speed: 2.5 + Math.random() * 1,
+        angle: fromLeft ? -0.1 + Math.random() * 0.2 : Math.PI - (-0.1 + Math.random() * 0.2),
+        scale: 0.9 + Math.random() * 0.3,
+        trail: [],
+        alive: true,
+        spawnedClick: true,
+      });
+    };
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -23,6 +119,17 @@ const StarBackground = () => {
     };
     resize();
     window.addEventListener('resize', resize);
+
+    const handleMouseMove = (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    };
+    const handleClick = (e) => {
+      spawnClickRocket(e.clientX, e.clientY);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('click', handleClick);
 
     const layers = [
       { count: 80, speed: 0.02, minR: 0.5, maxR: 1, opacity: 0.3 },
@@ -62,6 +169,7 @@ const StarBackground = () => {
     };
 
     let shootingTimer = 0;
+    let rocketTimer = 0;
 
     const animate = (time) => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -138,6 +246,67 @@ const StarBackground = () => {
         return s.life > 0 && s.opacity > 0;
       });
 
+      rocketTimer++;
+      if (rocketTimer > 300 + Math.random() * 400) {
+        spawnRocket();
+        rocketTimer = 0;
+      }
+
+      for (let i = rockets.length - 1; i >= 0; i--) {
+        const r = rockets[i];
+        if (!r.alive) {
+          rockets.splice(i, 1);
+          continue;
+        }
+
+        const dx = Math.cos(r.angle) * r.speed;
+        const dy = Math.sin(r.angle) * r.speed;
+        r.x += dx;
+        r.y += dy;
+
+        r.trail.push({ x: r.x, y: r.y, life: 1 });
+        if (r.trail.length > 25) r.trail.shift();
+
+        r.trail.forEach((t) => (t.life -= 0.04));
+        r.trail = r.trail.filter((t) => t.life > 0);
+
+        r.trail.forEach((t) => {
+          const alpha = t.life * 0.15;
+          ctx.beginPath();
+          ctx.arc(t.x, t.y, 2 * t.life, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(168, 85, 247, ${alpha})`;
+          ctx.fill();
+        });
+
+        const flamePhase = time * 0.02 + i;
+        drawRocket(ctx, r.x, r.y, r.angle, r.scale, flamePhase);
+
+        const margin = 80;
+        if (
+          r.x < -margin ||
+          r.x > canvas.width + margin ||
+          r.y < -margin ||
+          r.y > canvas.height + margin
+        ) {
+          r.alive = false;
+        }
+      }
+
+      if (mouseX > 0 && mouseY > 0) {
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(mouseX, mouseY, 8, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(168, 85, 247, 0.3)';
+        ctx.lineWidth = 1;
+        ctx.setLineDash([3, 5]);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(mouseX, mouseY, 2, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(168, 85, 247, 0.5)';
+        ctx.fill();
+        ctx.restore();
+      }
+
       animationId = requestAnimationFrame(animate);
     };
 
@@ -146,6 +315,8 @@ const StarBackground = () => {
     return () => {
       cancelAnimationFrame(animationId);
       window.removeEventListener('resize', resize);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('click', handleClick);
     };
   }, []);
 
