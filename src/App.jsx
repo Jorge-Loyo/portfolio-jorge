@@ -6,6 +6,7 @@ import Layout from './components/Layout';
 import Navbar from './components/Navbar';
 import ChatInterface from './components/ChatInterface';
 import Projects from './components/Projects';
+import About from './components/About';
 import StarBackground from './components/StarBackground';
 import Contact from './components/Contact';
 import ScrollToTop from './components/ScrollToTop';
@@ -39,6 +40,7 @@ function AnimatedRoutes() {
       >
         <Routes location={location}>
           <Route path="/" element={<ChatInterface />} />
+          <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
