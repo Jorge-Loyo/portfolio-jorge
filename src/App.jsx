@@ -82,7 +82,7 @@ function AppContent() {
             <Navbar />
 
             <motion.p variants={fadeInUp} className={styles.summary}>
-              {cvData.profile.summary}
+              {t.header.summary}
             </motion.p>
           </motion.div>
         </header>
