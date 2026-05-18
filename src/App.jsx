@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 
@@ -15,6 +15,13 @@ import { LanguageProvider, useLanguage } from './i18n/LanguageContext';
 import { cvData } from './data/cv';
 import styles from './styles/App.module.css';
 
+const pageTitles = {
+  '/': 'Inicio',
+  '/about': 'Acerca de',
+  '/projects': 'Proyectos',
+  '/contact': 'Contacto',
+};
+
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
@@ -28,6 +35,28 @@ const pageVariants = {
 
 function AnimatedRoutes() {
   const location = useLocation();
+  const { language } = useLanguage();
+
+  useEffect(() => {
+    const base = `Jorge Loyo - ${pageTitles[location.pathname] || 'Portfolio'}`;
+    document.title = base;
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) {
+      const descs = {
+        '/': cvData.profile.summary,
+        '/about': language === 'es'
+          ? 'Conoce mi trayectoria profesional, habilidades técnicas y formación.'
+          : 'Learn about my professional experience, technical skills and education.',
+        '/projects': language === 'es'
+          ? 'Proyectos destacados de desarrollo de software, análisis de datos e IA.'
+          : 'Featured projects in software development, data analysis and AI.',
+        '/contact': language === 'es'
+          ? 'Contacta conmigo para proyectos freelance, colaboraciones o contratación.'
+          : 'Get in touch for freelance projects, collaborations or hiring.',
+      };
+      meta.setAttribute('content', descs[location.pathname] || cvData.profile.summary);
+    }
+  }, [location.pathname, language]);
 
   return (
     <AnimatePresence mode="wait">

@@ -26,7 +26,7 @@ const cvData = {
     email: "Jorgenayati@gmail.com",
     phone: "+54 9 11 6168 2555",
     workStatus: "Documentación legal al día para trabajar en Argentina",
-    linkedin: "https://www.linkedin.com/in/jorge-antonio-loyo-nayati/",
+    linkedin: "https://www.linkedin.com/in/jorgeloyonayati/",
     github: "https://github.com/Jorge-Loyo",
     consulting: "https://agilize-soluciones.vercel.app",
     summary: "Desarrollador Full Stack y Analista de Datos con más de 7 años de experiencia en el diseño, desarrollo e implementación de aplicaciones web de extremo a extremo. Especializado en construir sistemas desde cero —APIs, autenticación, lógica de negocio y arquitectura de bases de datos— combinando frontend, backend y soluciones orientadas a datos. Ha participado en sistemas productivos utilizados por más de 800 usuarios en entornos críticos del sector salud."
@@ -161,12 +161,6 @@ const cvData = {
       link: "https://github.com/Jorge-Loyo/Licitarte"
     },
     {
-      name: "Plataforma de Inteligencia de Mercado",
-      desc: "Plataforma analítica para tendencias de precios del mercado farmacéutico. Procesamiento de más de 58M de registros. Modelos SQL optimizados y dashboards Power BI con DAX avanzado.",
-      tech: ["Power BI", "SQL", "Python", "DAX", "ETL"],
-      link: "https://github.com/Jorge-Loyo"
-    },
-    {
       name: "Infodets",
       desc: "Sistema de Gestión de Conocimiento Dinámico para entidades públicas. Utiliza IA para responder consultas ciudadanas con fuentes oficiales, asegurando soberanía de datos.",
       tech: ["TypeScript", "React", "Node.js", "IA", "PostgreSQL"],
@@ -185,12 +179,6 @@ const cvData = {
       link: "https://github.com/Jorge-Loyo/portfolio-jorge"
     },
     {
-      name: "Sistema de Integración y Facturación",
-      desc: "Automatización de intercambio de información con hospitales. Eliminación de procesos manuales con Excel mediante integración estructurada y sincronización en tiempo real.",
-      tech: ["SQL", "Python", "ETL", "Bases de Datos"],
-      link: "https://github.com/Jorge-Loyo"
-    },
-    {
       name: "English Memory",
       desc: "Juego de lógica en JavaScript Vanilla con manipulación del DOM, gestión de estado, control de tiempos y puntuación.",
       tech: ["JavaScript", "DOM", "CSS3"],
@@ -207,6 +195,12 @@ const cvData = {
       desc: "App de recetas con TypeScript y React. Búsqueda y filtrado por ingredientes, categorías y tiempo de preparación. Interfaz responsive.",
       tech: ["TypeScript", "React", "CSS3"],
       link: "https://github.com/Jorge-Loyo/Recetario"
+    },
+    {
+      name: "Tienda Repostería",
+      desc: "E-commerce front-end enfocado en UX/UI. Uso avanzado de CSS Grid y Flexbox para experiencia totalmente responsive.",
+      tech: ["HTML5", "CSS3", "Responsive"],
+      link: "https://github.com/Jorge-Loyo/tienda-reposteria"
     }
   ]
 };
