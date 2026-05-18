@@ -1,4 +1,3 @@
-/* src/styles/Projects.module.css */
 .container {
   width: 100%;
   padding-top: 20px;
@@ -7,9 +6,12 @@
 .title {
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #fff;
-  border-bottom: 1px solid #333;
+  background: linear-gradient(135deg, #fff, var(--galactic-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   padding-bottom: 10px;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.15);
 }
 
 .grid {
@@ -19,44 +21,75 @@
 }
 
 .card {
-  background-color: #111;
-  border: 1px solid #333;
-  border-radius: 12px;
-  padding: 20px;
-  transition: transform 0.2s, border-color 0.2s;
+  background: rgba(17, 17, 34, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(168, 85, 247, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.4s ease;
   text-decoration: none;
   display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.05), rgba(59, 130, 246, 0.05));
+}
+
+.card:hover::before {
+  opacity: 1;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  border-color: #666;
+  transform: translateY(-6px);
+  border-color: rgba(168, 85, 247, 0.3);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.1), 0 0 60px rgba(59, 130, 246, 0.05);
 }
 
 .projectName {
-  color: #e5e5e5;
+  color: #fff;
   font-size: 1.2rem;
   margin-bottom: 10px;
-  font-weight: bold;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
 }
 
 .projectDesc {
-  color: #888;
+  color: rgba(255, 255, 255, 0.6);
   font-size: 0.9rem;
-  line-height: 1.5;
-  margin-bottom: 15px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
 }
 
 .techStack {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 
 .techTag {
-  background-color: #222;
-  color: #ccc;
-  font-size: 0.75rem;
-  padding: 4px 8px;
-  border-radius: 4px;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.12), rgba(59, 130, 246, 0.12));
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(168, 85, 247, 0.1);
+  font-weight: 500;
+  letter-spacing: 0.3px;
 }

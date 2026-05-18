@@ -158,15 +158,33 @@ const cvData = {
     },
     {
       name: "Portfolio con IA",
-      desc: "Implementación Full Stack con arquitectura CI/CD (Vercel + Render). Integración de API Gemini 2.0 manejando contexto de conversación y cuotas de uso mediante backend seguro en Node.js.",
+      desc: "Implementación Full Stack con arquitectura CI/CD. Integración de API Gemini 2.0 manejando contexto de conversación y cuotas de uso mediante backend seguro en Node.js.",
       tech: ["React", "Gemini AI", "Node.js", "CI/CD"],
       link: "https://github.com/Jorge-Loyo/portfolio-jorge"
+    },
+    {
+      name: "Infodets",
+      desc: "Sistema de Gestión de Conocimiento Dinámico para entidades públicas. Utiliza IA para responder consultas ciudadanas con fuentes oficiales, asegurando soberanía de datos. Motor de mejora continua que detecta vacíos de información.",
+      tech: ["TypeScript", "React", "Node.js", "IA", "PostgreSQL"],
+      link: "https://github.com/Jorge-Loyo/infodets"
     },
     {
       name: "English Memory",
       desc: "Juego de lógica con JavaScript Vanilla. Implementación de algoritmos de manipulación del DOM y gestión de estado local para controlar mecánica del juego, tiempos y sistema de puntuación.",
       tech: ["JavaScript", "DOM", "CSS3"],
       link: "https://github.com/Jorge-Loyo/English_Memory"
+    },
+    {
+      name: "Creador de Audios IA",
+      desc: "Aplicación para creación de audios con inteligencia artificial usando Gemini AI. Genera contenido narrado automatizado con texto a voz, ideal para presentaciones y contenido multimedia.",
+      tech: ["Node.js", "Gemini AI", "API REST", "Audio"],
+      link: "https://github.com/Jorge-Loyo/Creador_Audios"
+    },
+    {
+      name: "Recetario",
+      desc: "Aplicación web de recetas de cocina con TypeScript y React. Sistema de búsqueda y filtrado por ingredientes, categorías y tiempo de preparación. Interfaz responsive con enfoque en UX.",
+      tech: ["TypeScript", "React", "CSS3", "Responsive"],
+      link: "https://github.com/Jorge-Loyo/Recetario"
     },
     {
       name: "Tienda Repostería",

@@ -1,39 +1,49 @@
-/* src/styles/App.module.css */
-
 .header {
   margin-bottom: 40px;
-  text-align: center; /* Esto centra el texto y los botones del Navbar */
+  text-align: center;
   width: 100%;
 }
 
 .title {
   font-size: 3rem;
-  font-weight: bold;
+  font-weight: 800;
   margin-bottom: 10px;
-  color: #fff;
+  background: linear-gradient(135deg, #fff 0%, var(--galactic-purple) 50%, var(--galactic-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
 }
 
 .role {
   font-size: 1.5rem;
   color: #888;
-  font-weight: normal;
+  font-weight: 400;
   margin-bottom: 30px;
 }
 
 .summary {
-  margin: 30px auto; /* "auto" a los lados centra el bloque */
-  max-width: 800px;  /* Limita el ancho del párrafo */
-  line-height: 1.6;
-  color: #ccc;
+  margin: 30px auto;
+  max-width: 800px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
   text-align: center;
+  font-size: 1.05rem;
 }
 
 .avatar {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;       /* Círculo perfecto */
-  object-fit: cover;        /* Evita que la foto se estire/deforme */
-  border: 4px solid #333;   /* Borde elegante */
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(168, 85, 247, 0.3);
   margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Sombra suave */
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.2), 0 0 60px rgba(59, 130, 246, 0.1);
+  transition: all 0.4s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+  border-color: rgba(168, 85, 247, 0.7);
+  box-shadow: 0 0 40px rgba(168, 85, 247, 0.4), 0 0 80px rgba(59, 130, 246, 0.2);
 }

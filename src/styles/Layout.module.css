@@ -1,18 +1,10 @@
-/* src/styles/Layout.module.css */
-
 .container {
-  /* Ocupar toda la pantalla obligatoriamente */
-  width: 100vw; 
+  width: 100vw;
   min-height: 100vh;
-  
-  /* Centrado Flexbox */
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  /* background-color: #0a0a0a;  <--- ¡ESTA LÍNEA ERA LA CULPABLE! BORRALA */
-  background-color: transparent; /* O pon esto para asegurar transparencia */
-  
+  background-color: transparent;
   color: #e5e5e5;
   font-family: 'Inter', sans-serif;
 }

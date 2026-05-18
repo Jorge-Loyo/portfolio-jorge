@@ -1,13 +1,24 @@
-/* src/index.css */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  
-  /* Esquema de colores base */
   color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #0a0a0a; /* El mismo fondo oscuro de tu layout */
+  background-color: #050510;
+
+  --galactic-purple: #a855f7;
+  --galactic-blue: #3b82f6;
+  --galactic-pink: #ec4899;
+  --galactic-cyan: #06b6d4;
+  --galactic-bg: #050510;
+  --galactic-surface: rgba(17, 17, 34, 0.6);
+  --galactic-border: rgba(168, 85, 247, 0.15);
+  --galactic-glow: 0 0 20px rgba(168, 85, 247, 0.15);
+  --galactic-radius: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -15,11 +26,22 @@ body {
   padding: 0;
   min-width: 100vw;
   min-height: 100vh;
-  overflow-x: hidden; /* Evita scroll horizontal accidental */
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+}
+body::-webkit-scrollbar-track {
+  background: #050510;
+}
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--galactic-purple), var(--galactic-blue));
+  border-radius: 3px;
 }
 
 #root {
-  width: 100%; /* Esto es vital: permite que React use toda la pantalla */
+  width: 100%;
   margin: 0;
   padding: 0;
 }
