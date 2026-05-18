@@ -69,6 +69,66 @@ const drawRocket = (ctx, x, y, angle, scale, flamePhase) => {
   ctx.restore();
 };
 
+const PLANET_TYPES = [
+  { colors: ['#a855f7', '#7c3aed'], ring: true, bands: false },
+  { colors: ['#3b82f6', '#06b6d4'], ring: false, bands: true },
+  { colors: ['#ec4899', '#be185d'], ring: true, bands: false },
+  { colors: ['#06b6d4', '#0891b2'], ring: false, bands: true },
+];
+
+const drawPlanet = (ctx, x, y, radius, type, rotation) => {
+  ctx.save();
+  ctx.translate(x, y);
+
+  const grad = ctx.createRadialGradient(-radius * 0.3, -radius * 0.3, 0, 0, 0, radius);
+  grad.addColorStop(0, type.colors[0]);
+  grad.addColorStop(0.6, type.colors[1]);
+  grad.addColorStop(1, 'rgba(0, 0, 0, 0.3)');
+  ctx.fillStyle = grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, Math.PI * 2);
+  ctx.fill();
+
+  ctx.shadowBlur = radius * 0.5;
+  ctx.shadowColor = type.colors[0];
+  ctx.fill();
+  ctx.shadowBlur = 0;
+
+  if (type.bands) {
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+    ctx.lineWidth = 1;
+    for (let i = -3; i <= 3; i++) {
+      const bandY = i * (radius * 0.22);
+      ctx.beginPath();
+      ctx.ellipse(0, bandY, radius * 0.9, radius * 0.08, 0, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+  }
+
+  if (type.ring) {
+    ctx.save();
+    ctx.rotate(rotation * 0.5);
+    ctx.strokeStyle = `rgba(255, 255, 255, 0.15)`;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.ellipse(0, 0, radius * 2, radius * 0.35, 0, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.strokeStyle = `rgba(255, 255, 255, 0.08)`;
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    ctx.ellipse(0, 0, radius * 2.3, radius * 0.4, 0, 0, Math.PI * 2);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  ctx.beginPath();
+  ctx.arc(-radius * 0.2, -radius * 0.2, radius * 0.15, 0, Math.PI * 2);
+  ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
+  ctx.fill();
+
+  ctx.restore();
+};
+
 const StarBackground = () => {
   const canvasRef = useRef(null);
 
@@ -157,6 +217,17 @@ const StarBackground = () => {
       { x: 0.5, y: 0.8, r: 200, color: '236, 72, 153', alpha: 0.02 },
     ];
 
+    const planets = Array.from({ length: 4 }, () => ({
+      x: Math.random() * canvas.width,
+      y: canvas.height * 0.1 + Math.random() * canvas.height * 0.5,
+      radius: 12 + Math.random() * 25,
+      type: PLANET_TYPES[Math.floor(Math.random() * PLANET_TYPES.length)],
+      speedX: (Math.random() - 0.5) * 0.08,
+      speedY: (Math.random() - 0.5) * 0.04,
+      rotation: Math.random() * Math.PI * 2,
+      alpha: 0.15 + Math.random() * 0.2,
+    }));
+
     const spawnShootingStar = () => {
       shootingStars.push({
         x: Math.random() * canvas.width * 1.5 - canvas.width * 0.25,
@@ -212,6 +283,21 @@ const StarBackground = () => {
           }
           if (star.x < -5) star.x = canvas.width + 5;
         });
+      });
+
+      planets.forEach((p) => {
+        ctx.globalAlpha = p.alpha;
+        drawPlanet(ctx, p.x, p.y, p.radius, p.type, p.rotation);
+        ctx.globalAlpha = 1;
+
+        p.x += p.speedX;
+        p.y += p.speedY;
+        p.rotation += 0.001;
+
+        if (p.x < -p.radius * 3) p.x = canvas.width + p.radius * 3;
+        if (p.x > canvas.width + p.radius * 3) p.x = -p.radius * 3;
+        if (p.y < -p.radius * 3) p.y = canvas.height + p.radius * 3;
+        if (p.y > canvas.height + p.radius * 3) p.y = -p.radius * 3;
       });
 
       shootingTimer++;
