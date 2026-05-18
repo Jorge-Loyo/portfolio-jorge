@@ -24,7 +24,7 @@ const cvData = {
     origin: "El Tigre, Anzoátegui, Venezuela",
     location: "San Telmo, CABA, Buenos Aires, Argentina",
     email: "Jorgenayati@gmail.com",
-    phone: "+54 9 11 6557 6344",
+    phone: "+54 9 11 6168 2555",
     workStatus: "Documentación legal al día para trabajar en Argentina",
     linkedin: "https://www.linkedin.com/in/jorge-antonio-loyo-nayati/",
     github: "https://github.com/Jorge-Loyo",

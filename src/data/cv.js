@@ -16,7 +16,7 @@ export const cvData = {
 
   socials: [
     { id: 1, name: "Email", value: "Jorgenayati@gmail.com", link: "mailto:Jorgenayati@gmail.com", icon: "Mail" },
-    { id: 2, name: "WhatsApp", value: "+54 9 11 6557 6344", link: "https://wa.me/5491165576344", icon: "MessageCircle" },
+    { id: 2, name: "WhatsApp", value: "+54 9 11 6168 2555", link: "https://wa.me/5491161682555", icon: "MessageCircle" },
     { id: 3, name: "GitHub", value: "Jorge-Loyo", link: "https://github.com/Jorge-Loyo", icon: "Github" },
     { id: 4, name: "LinkedIn", value: "Jorge Loyo", link: "https://www.linkedin.com/in/jorge-antonio-loyo-nayati/", icon: "Linkedin" },
     { id: 5, name: "Agilize Soluciones", value: "agilize-soluciones.vercel.app", link: "https://agilize-soluciones.vercel.app", icon: "Globe" },
