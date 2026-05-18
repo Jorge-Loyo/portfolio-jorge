@@ -93,3 +93,36 @@
   font-weight: 500;
   letter-spacing: 0.3px;
 }
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 15px;
+  }
+  .title {
+    font-size: 1.6rem;
+  }
+  .card {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .title {
+    font-size: 1.3rem;
+  }
+  .projectName {
+    font-size: 1.05rem;
+  }
+  .projectDesc {
+    font-size: 0.82rem;
+  }
+  .techTag {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+  }
+}

@@ -88,3 +88,32 @@
   position: relative;
   z-index: 1;
 }
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  .title {
+    font-size: 1.6rem;
+  }
+  .card {
+    padding: 24px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .title {
+    font-size: 1.3rem;
+  }
+  .cardTitle {
+    font-size: 1rem;
+  }
+  .cardValue {
+    font-size: 0.8rem;
+  }
+}

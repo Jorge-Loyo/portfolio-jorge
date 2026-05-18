@@ -82,34 +82,35 @@ const StarBackground = () => {
 
     const rockets = [];
 
+    const MAX_ROCKETS = 2;
+
     const spawnRocket = () => {
+      if (rockets.length >= MAX_ROCKETS) return;
       const fromLeft = Math.random() > 0.5;
-      const baseY = 100 + Math.random() * (canvas.height * 0.6);
+      const upperBound = canvas.height * 0.35;
+      const baseY = 40 + Math.random() * upperBound;
       rockets.push({
         x: fromLeft ? -60 : canvas.width + 60,
         y: baseY,
-        targetY: baseY + (Math.random() - 0.5) * 200,
-        speed: 1.5 + Math.random() * 1.5,
-        angle: fromLeft ? -0.15 + Math.random() * 0.3 : Math.PI - (-0.15 + Math.random() * 0.3),
-        scale: 0.9 + Math.random() * 0.3,
+        speed: 1.2 + Math.random() * 0.8,
+        angle: fromLeft ? -0.08 + Math.random() * 0.16 : Math.PI - (-0.08 + Math.random() * 0.16),
+        scale: 0.5 + Math.random() * 0.25,
         trail: [],
         alive: true,
-        spawnedClick: false,
       });
     };
 
-    const spawnClickRocket = (cx, cy) => {
+    const spawnClickRocket = () => {
+      if (rockets.length >= MAX_ROCKETS) return;
       const fromLeft = Math.random() > 0.5;
       rockets.push({
         x: fromLeft ? -60 : canvas.width + 60,
-        y: cy - 100 + Math.random() * 200,
-        targetY: cy,
-        speed: 2.5 + Math.random() * 1,
-        angle: fromLeft ? -0.1 + Math.random() * 0.2 : Math.PI - (-0.1 + Math.random() * 0.2),
-        scale: 0.9 + Math.random() * 0.3,
+        y: 40 + Math.random() * (canvas.height * 0.25),
+        speed: 2 + Math.random() * 0.8,
+        angle: fromLeft ? -0.05 + Math.random() * 0.1 : Math.PI - (-0.05 + Math.random() * 0.1),
+        scale: 0.45 + Math.random() * 0.2,
         trail: [],
         alive: true,
-        spawnedClick: true,
       });
     };
 
@@ -124,8 +125,8 @@ const StarBackground = () => {
       mouseX = e.clientX;
       mouseY = e.clientY;
     };
-    const handleClick = (e) => {
-      spawnClickRocket(e.clientX, e.clientY);
+    const handleClick = () => {
+      spawnClickRocket();
     };
 
     window.addEventListener('mousemove', handleMouseMove);

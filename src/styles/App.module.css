@@ -47,3 +47,37 @@
   border-color: rgba(168, 85, 247, 0.7);
   box-shadow: 0 0 40px rgba(168, 85, 247, 0.4), 0 0 80px rgba(59, 130, 246, 0.2);
 }
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  .role {
+    font-size: 1.1rem;
+    padding: 0 10px;
+  }
+  .summary {
+    font-size: 0.95rem;
+    padding: 0 15px;
+  }
+  .avatar {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.6rem;
+  }
+  .role {
+    font-size: 0.95rem;
+  }
+  .summary {
+    font-size: 0.88rem;
+  }
+  .avatar {
+    width: 100px;
+    height: 100px;
+  }
+}
