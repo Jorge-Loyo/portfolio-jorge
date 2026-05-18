@@ -26,177 +26,186 @@ const cvData = {
     email: "Jorgenayati@gmail.com",
     phone: "+54 9 11 6557 6344",
     workStatus: "Documentación legal al día para trabajar en Argentina",
-    summary: "Desarrollador Full Stack y Analista de Datos con experiencia en el diseño, desarrollo y despliegue de aplicaciones web, integración de APIs y manejo de bases de datos. He trabajado con SQL, Power BI, Excel y Python para el análisis de información y seguimiento de KPIs, y con tecnologías como React, Angular y Node.js para construir soluciones completas. Mi background técnico me permite conectar datos, negocio y desarrollo de software, aportando una visión integral y orientada a resultados."
+    linkedin: "https://www.linkedin.com/in/jorge-antonio-loyo-nayati/",
+    github: "https://github.com/Jorge-Loyo",
+    summary: "Desarrollador Full Stack y Analista de Datos con más de 7 años de experiencia en el diseño, desarrollo e implementación de aplicaciones web de extremo a extremo. Especializado en construir sistemas desde cero —APIs, autenticación, lógica de negocio y arquitectura de bases de datos— combinando frontend, backend y soluciones orientadas a datos. Ha participado en sistemas productivos utilizados por más de 800 usuarios en entornos críticos del sector salud."
   },
-  
+
   availability: {
     status: "Disponible para incorporación inmediata",
     modality: "Remoto preferido, pero abierto a híbrido o presencial",
     schedule: "Full-time, Part-time o Freelance"
   },
-  
+
   rates: {
     salary: "Desde $1.800.000 ARS mensuales",
     freelance: "$8 USD por hora",
     currency: "Cotizo en USD, cobro en ARS"
   },
-  
+
   languages: [
     { name: "Español", level: "Nativo" },
-    { name: "Inglés", level: "Básico A2 (en proceso de mejora)" }
+    { name: "Inglés", level: "Intermedio A2/B1 (en proceso de mejora)" }
   ],
-  
+
   certifications: [
-    "AWS Cloud",
-    "Python",
-    "SQL",
-    "Todos los cursos del CV tienen certificación e insignias"
+    "SQL Intermedio y Avanzado - Hola Mundo Academy",
+    "Python Básico e Intermedio - Talento Tech",
+    "Excel Avanzado - Smart Academy",
+    "Power BI Intermedio - Smart Academy",
+    "AWS Cloud Fundamentals - AWS Academy",
+    "Docker",
+    "APIs REST",
+    "Tango Soft Trainer"
   ],
-  
+
+  education: [
+    { degree: "Técnico Superior en Desarrollo de Software", institution: "IFTS 11 (Instituto de Formación Técnica Superior)", status: "Último cuatrimestre", period: "2024 - Actualidad" },
+    { degree: "SQL Intermedio y Avanzado", institution: "Hola Mundo Academy", period: "Mar 2022 - Dic 2022" },
+    { degree: "Python Básico e Intermedio", institution: "Talento Tech", period: "Jun 2024 - Dic 2024" },
+    { degree: "Power BI Intermedio", institution: "Smart Academy", period: "Ago 2024 - Oct 2024" },
+    { degree: "AWS Cloud Fundamentals", institution: "AWS Academy", period: "Ago 2025 - Dic 2025" },
+  ],
+
   industries: [
-    "Compras",
-    "Ventas",
-    "Logística",
-    "Operaciones",
-    "Sistemas",
-    "Finanzas"
+    "Salud", "Farmacéutico", "Compras", "Ventas", "Logística", "Operaciones", "Sistemas", "Finanzas"
   ],
-  
+
   specializations: [
-    "Sistemas",
-    "Desarrollo de Proyectos",
-    "Análisis de Datos"
+    "Desarrollo Full Stack", "Análisis de Datos", "Business Intelligence", "Análisis Funcional", "Arquitectura de Sistemas"
   ],
-  
+
   interests: {
     projects: [
       "Desarrollo de mejoras operacionales",
-      "Mejoras o creación de herramientas digitales",
-      "Creación de métricas",
-      "Sistemas de gestión empresarial"
+      "Creación de herramientas digitales desde cero",
+      "Automatización de procesos con IA",
+      "Sistemas de gestión empresarial e integraciones"
     ],
-    specialization: "Backend y Análisis de Datos"
+    specialization: "Backend, Análisis de Datos e IA"
   },
-  
+
   portfolio: {
-    live: "Varios proyectos con demo online y aplicaciones de escritorio portables",
+    live: "https://jorge-loyo-portfolio.vercel.app/",
     url: "https://github.com/Jorge-Loyo"
   },
-  
-  education: {
-    degree: "Tecnicatura Superior en Desarrollo de Software",
-    institution: "IFTS 11 (Instituto de Formación Técnica Superior)",
-    status: "En curso",
-    period: "2023 - Presente",
-    location: "Buenos Aires, Argentina"
-  },
-  
+
   skills: {
-    languages: ["JavaScript", "Python", "C#", "SQL"],
-    frontend: ["React", "Angular", "HTML5", "CSS3", "Sass"],
-    backend: ["Node.js", "Express", "FastAPI"],
-    databases: ["MySQL", "PostgreSQL", "MongoDB", "Firebase"],
-    cloud: ["AWS Cloud", "Google Cloud"],
-    erp: ["Odoo ERP (Experto)"],
-    tools: ["Git", "Jira", "Trello", "Power BI", "Postman"],
+    frontend: ["React", "Next.js", "Angular", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind"],
+    backend: ["Node.js", "Express", "Python", "Flask", "FastAPI", "APIs REST", "JWT", "C#"],
+    databases: ["PostgreSQL", "MySQL", "SQL Server", "MongoDB", "Firebase"],
+    cloud_devops: ["AWS", "Docker", "CI/CD", "Render", "Vercel", "Google Cloud"],
+    bi_data: ["Power BI", "DAX Avanzado", "Power Query", "Tableau", "Python (Pandas, Polars)", "ETL", "Pentaho"],
+    erp: ["Odoo ERP (Experto)", "Tango Soft", "Carena", "SAP"],
+    tools: ["Git", "GitHub", "Postman", "Jira", "Trello", "Notion", "N8N"],
     levels: {
-      "JavaScript/Node.js": "Avanzado",
-      "React/Angular": "Intermedio",
-      "Python/FastAPI": "Intermedio",
+      "JavaScript/TypeScript/Node.js": "Avanzado",
+      "React/Next.js/Angular": "Intermedio-Avanzado",
+      "Python/Flask/FastAPI": "Intermedio",
       "SQL/PostgreSQL/MySQL": "Avanzado",
+      "Power BI/DAX": "Avanzado",
       "Odoo ERP": "Experto",
+      "AWS/Docker": "Intermedio",
       "C#": "Básico"
     }
   },
-  
+
   softSkills: [
-    "Liderazgo y Trabajo en Equipo",
-    "Pensamiento Crítico y Resolución de Problemas",
-    "Adaptabilidad y Flexibilidad",
-    "Comunicación Efectiva",
-    "Organización y Puntualidad",
-    "Orientación al Cliente/Usuario"
+    "Liderazgo Técnico y Mentoría (equipos de hasta 24 personas)",
+    "Pensamiento Analítico y Resolución de Problemas Complejos",
+    "Comunicación Efectiva con Stakeholders",
+    "Gestión del Tiempo y Priorización",
+    "Adaptabilidad a Entornos Dinámicos",
+    "Orientación al Negocio y Resultados",
+    "Gestión de Requerimientos y Procesos",
+    "Capacitación y Adopción de Sistemas"
   ],
-  
+
   experience: [
     {
-      role: "Responsable de Sistemas / Analista",
+      role: "Full Stack Developer / Analista de Sistemas",
       company: "CMI S.A",
-      period: "Mayo 2023 - Julio 2025",
+      period: "Julio 2018 - Julio 2025",
+      description: "Participación en el desarrollo, integración y mantenimiento de sistemas empresariales del sector salud. Sistema de alta disponibilidad usado por más de 800 usuarios en hospitales.",
       achievements: [
+        "Diseño y desarrollo de aplicaciones web completas integrando frontend, backend y bases de datos",
+        "Desarrollo de APIs desde cero con autenticación JWT, roles y lógica de negocio",
+        "Diseño y optimización de bases de datos relacionales mejorando rendimiento",
+        "Implementación de integraciones entre sistemas internos y plataformas externas de salud",
+        "Implementación técnica de nuevas sucursales: configuración, integraciones y puesta en producción",
+        "Desarrollo de dashboards corporativos en Power BI para monitoreo de ventas, compras e inventarios",
         "Liderazgo técnico en migración y configuración de Odoo ERP",
-        "Soporte a más de 500 usuarios",
-        "Administración de bases de datos PostgreSQL",
-        "Optimización de flujos de trabajo con Python",
-        "Gestión de infraestructura IT"
+        "Soporte a más de 500 usuarios y gestión de infraestructura IT"
       ]
     },
     {
-      role: "Responsable de Compras",
+      role: "Analista de Datos / Responsable de Compras",
       company: "Vooraf Worden",
-      period: "Agosto 2025 - Octubre 2025",
+      period: "Agosto 2025 - Enero 2026",
+      description: "Gestión estratégica de proveedores y optimización de costos. Desarrollo de soluciones analíticas en Power BI.",
       achievements: [
-        "Gestión estratégica de proveedores",
-        "Optimización de costos",
-        "Análisis de datos para toma de decisiones"
+        "Desarrollo de dashboards analíticos para rotación de inventario, costos y desempeño de proveedores",
+        "Automatización de reportes financieros y operativos con Power Query y SQL",
+        "Implementación de KPIs estructurados mejorando precisión de reportes",
+        "Integración de múltiples fuentes de datos en dashboards unificados de BI"
       ]
     }
   ],
-  
+
   projects: [
     {
       name: "Licitarte",
-      desc: "Sistema profesional de gestión de licitaciones farmacéuticas. Incluye análisis de márgenes en tiempo real con alertas visuales, módulo de métricas con ranking de causas de pérdidas, dashboard con 6 indicadores clave y catálogos configurables. Arquitectura escalable con SQLite local y PostgreSQL en producción.",
-      tech: ["Python", "Flask", "SQLite", "PostgreSQL", "JavaScript", "HTML5", "CSS3"],
+      desc: "Sistema profesional de gestión de licitaciones farmacéuticas. Incluye análisis de márgenes en tiempo real con alertas visuales, dashboard con 6 indicadores clave y catálogos configurables. Arquitectura escalable con SQLite y PostgreSQL.",
+      tech: ["Python", "Flask", "SQLite", "PostgreSQL", "JavaScript"],
       link: "https://github.com/Jorge-Loyo/Licitarte"
     },
     {
+      name: "Plataforma de Inteligencia de Mercado",
+      desc: "Plataforma analítica para tendencias de precios del mercado farmacéutico. Procesamiento de más de 58M de registros. Modelos SQL optimizados y dashboards Power BI con DAX avanzado.",
+      tech: ["Power BI", "SQL", "Python", "DAX", "ETL"],
+      link: "https://github.com/Jorge-Loyo"
+    },
+    {
+      name: "Infodets",
+      desc: "Sistema de Gestión de Conocimiento Dinámico para entidades públicas. Utiliza IA para responder consultas ciudadanas con fuentes oficiales, asegurando soberanía de datos.",
+      tech: ["TypeScript", "React", "Node.js", "IA", "PostgreSQL"],
+      link: "https://github.com/Jorge-Loyo/infodets"
+    },
+    {
       name: "Agendarte",
-      desc: "Sistema integral de gestión de reservas. Desafío principal: diseñar arquitectura de base de datos SQL para manejar concurrencia de citas y evitar solapamientos en tiempo real, asegurando integridad de datos.",
+      desc: "Sistema integral de gestión de reservas con arquitectura SQL para concurrencia de citas en tiempo real, evitando solapamientos.",
       tech: ["React", "Node.js", "SQL", "Auth"],
       link: "https://github.com/Jorge-Loyo/Agendarte"
     },
     {
       name: "Portfolio con IA",
-      desc: "Implementación Full Stack con arquitectura CI/CD. Integración de API Gemini 2.0 manejando contexto de conversación y cuotas de uso mediante backend seguro en Node.js.",
+      desc: "Portfolio profesional con chat interactivo impulsado por Gemini AI. Arquitectura Full Stack con CI/CD. Asistente virtual que responde sobre experiencia y disponibilidad.",
       tech: ["React", "Gemini AI", "Node.js", "CI/CD"],
       link: "https://github.com/Jorge-Loyo/portfolio-jorge"
     },
     {
-      name: "Infodets",
-      desc: "Sistema de Gestión de Conocimiento Dinámico para entidades públicas. Utiliza IA para responder consultas ciudadanas con fuentes oficiales, asegurando soberanía de datos. Motor de mejora continua que detecta vacíos de información.",
-      tech: ["TypeScript", "React", "Node.js", "IA", "PostgreSQL"],
-      link: "https://github.com/Jorge-Loyo/infodets"
+      name: "Sistema de Integración y Facturación",
+      desc: "Automatización de intercambio de información con hospitales. Eliminación de procesos manuales con Excel mediante integración estructurada y sincronización en tiempo real.",
+      tech: ["SQL", "Python", "ETL", "Bases de Datos"],
+      link: "https://github.com/Jorge-Loyo"
     },
     {
       name: "English Memory",
-      desc: "Juego de lógica con JavaScript Vanilla. Implementación de algoritmos de manipulación del DOM y gestión de estado local para controlar mecánica del juego, tiempos y sistema de puntuación.",
+      desc: "Juego de lógica en JavaScript Vanilla con manipulación del DOM, gestión de estado, control de tiempos y puntuación.",
       tech: ["JavaScript", "DOM", "CSS3"],
       link: "https://github.com/Jorge-Loyo/English_Memory"
     },
     {
       name: "Creador de Audios IA",
-      desc: "Aplicación para creación de audios con inteligencia artificial usando Gemini AI. Genera contenido narrado automatizado con texto a voz, ideal para presentaciones y contenido multimedia.",
-      tech: ["Node.js", "Gemini AI", "API REST", "Audio"],
+      desc: "Generación de audios con inteligencia artificial usando Gemini AI. Texto a voz automatizado para presentaciones y contenido multimedia.",
+      tech: ["Node.js", "Gemini AI", "API REST"],
       link: "https://github.com/Jorge-Loyo/Creador_Audios"
     },
     {
       name: "Recetario",
-      desc: "Aplicación web de recetas de cocina con TypeScript y React. Sistema de búsqueda y filtrado por ingredientes, categorías y tiempo de preparación. Interfaz responsive con enfoque en UX.",
-      tech: ["TypeScript", "React", "CSS3", "Responsive"],
+      desc: "App de recetas con TypeScript y React. Búsqueda y filtrado por ingredientes, categorías y tiempo de preparación. Interfaz responsive.",
+      tech: ["TypeScript", "React", "CSS3"],
       link: "https://github.com/Jorge-Loyo/Recetario"
-    },
-    {
-      name: "Tienda Repostería",
-      desc: "E-commerce front-end enfocado en UX/UI. Uso avanzado de CSS Grid y Flexbox para experiencia totalmente responsive y accesible.",
-      tech: ["HTML5", "CSS3", "Responsive"],
-      link: "https://github.com/Jorge-Loyo/tienda-reposteria"
-    },
-    {
-      name: "Umbrella Project",
-      desc: "Maquetación corporativa. Estructura semántica HTML5 y buenas prácticas de SEO on-page, optimizando carga y posicionamiento.",
-      tech: ["HTML5", "Sass", "BEM", "Git"],
-      link: "https://github.com/Jorge-Loyo/umbrella_project"
     }
   ]
 };
@@ -217,7 +226,8 @@ app.post('/chat', async (req, res) => {
       - Ubicación actual: ${cvData.profile.location}
       - Email: ${cvData.profile.email}
       - Teléfono: ${cvData.profile.phone}
-      - GitHub: ${cvData.portfolio.url}
+      - GitHub: ${cvData.profile.github}
+      - LinkedIn: ${cvData.profile.linkedin}
       - Estado legal: ${cvData.profile.workStatus}
       
       === DISPONIBILIDAD ===
@@ -252,17 +262,14 @@ app.post('/chat', async (req, res) => {
       GitHub: ${cvData.portfolio.url}
       
       === FORMACIÓN ACADÉMICA ===
-      - Carrera: ${cvData.education.degree}
-      - Institución: ${cvData.education.institution}
-      - Estado: ${cvData.education.status} (${cvData.education.period})
-      - Ubicación: ${cvData.education.location}
+      ${cvData.education.map(edu => `- ${edu.degree} - ${edu.institution} (${edu.period})`).join("\n      ")}
       
       === HABILIDADES TÉCNICAS ===
-      Lenguajes: ${cvData.skills.languages.join(", ")}
       Frontend: ${cvData.skills.frontend.join(", ")}
       Backend: ${cvData.skills.backend.join(", ")}
       Bases de Datos: ${cvData.skills.databases.join(", ")}
-      Cloud: ${cvData.skills.cloud.join(", ")}
+      Cloud & DevOps: ${cvData.skills.cloud_devops.join(", ")}
+      BI & Data: ${cvData.skills.bi_data.join(", ")}
       ERP: ${cvData.skills.erp.join(", ")}
       Herramientas: ${cvData.skills.tools.join(", ")}
       
