@@ -31,7 +31,8 @@ export const translations = {
     },
 
     projects: {
-      title: "Proyectos Destacados"
+      title: "Proyectos Destacados",
+      caseStudy: "Caso de Estudio"
     },
 
     contact: {
@@ -70,7 +71,8 @@ export const translations = {
     },
 
     projects: {
-      title: "Featured Projects"
+      title: "Featured Projects",
+      caseStudy: "Case Study"
     },
 
     contact: {
