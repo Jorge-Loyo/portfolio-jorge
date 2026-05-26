@@ -94,7 +94,7 @@ export const cvData = {
   projectCategories: [
     { id: "data", labelEs: "Data Analytics & BI", labelEn: "Data Analytics & BI" },
     { id: "fullstack", labelEs: "Full Stack Development", labelEn: "Full Stack Development" },
-    { id: "enterprise", labelEs: "Soluciones Enterprise", labelEn: "Enterprise Solutions" },
+    { id: "enterprise", labelEs: "Gestión y Soluciones Empresariales", labelEn: "Management & Enterprise Solutions" },
   ],
 
   projects: [
@@ -160,10 +160,10 @@ export const cvData = {
     {
       id: 8,
       category: "enterprise",
-      name: "Sistema de Dispensación Hospitalaria",
-      highlight: "800+ usuarios activos en hospitales",
-      desc: "Caso de Estudio: Coordinación de requerimientos y puesta en producción de sistema de dispensación utilizado diariamente por +800 usuarios en múltiples sucursales del sector salud. Gestión de alta disponibilidad, capacitación de equipos y soporte en entornos críticos 24/7.",
-      tech: ["SQL Server", "C#", "Integración de Sistemas", "Alta Disponibilidad", "Gestión de Requerimientos"],
+      name: "Apertura Integral de Farmacias Hospitalarias e Infraestructura IT",
+      highlight: "3 unidades operativas · 24 colaboradores · 500+ usuarios en producción",
+      desc: "Caso de Éxito — Project Management: Coordinación de la apertura desde cero de 3 unidades operativas críticas bajo presión de tiempo y regulaciones estrictas del sector salud. Rol: Project Leader IT con liderazgo de equipo de 24 colaboradores, gestión de presupuesto y negociación con proveedores. Resultado: puesta en producción exitosa, interconexión automatizada con hospitales externos en tiempo real y adopción fluida de sistemas internos para más de 500 usuarios.",
+      tech: ["Project Management", "Liderazgo de Equipos", "Gestión de Presupuesto", "Infraestructura IT", "Interoperabilidad", "Sector Salud"],
       link: "#",
       type: "case-study",
     },
