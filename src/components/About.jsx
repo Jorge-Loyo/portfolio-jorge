@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../i18n/LanguageContext';
 import { cvData } from '../data/cv';
-import { Briefcase, GraduationCap, Award, Cpu, Heart, Download, MessageSquare } from 'lucide-react';
+import { Briefcase, GraduationCap, Award, Cpu, Heart, MessageSquare } from 'lucide-react';
 import styles from '../styles/About.module.css';
 
 const sectionVariants = {
@@ -107,63 +107,13 @@ const About = () => {
         </div>
       </motion.div>
 
-      {/* CTA Buttons */}
-      <motion.div
-        className={styles.ctaSection}
-        variants={sectionVariants}
-        initial="hidden"
-        animate="visible"
-        custom={2}
-      >
-        <a href="/CV Jorge Loyo.pdf" download className={styles.ctaBtn}>
-          <Download size={18} />
-          {language === 'es' ? 'Descargar CV' : 'Download CV'}
-        </a>
-        <a href="https://www.linkedin.com/in/jorgeloyonayati/" target="_blank" rel="noopener noreferrer" className={`${styles.ctaBtn} ${styles.ctaBtnSecondary}`}>
-          <MessageSquare size={18} />
-          {language === 'es' ? 'Hablemos' : "Let's Talk"}
-        </a>
-      </motion.div>
-
-      {/* Skills Grid - Reagrupado */}
-      <motion.div
-        className={styles.section}
-        variants={sectionVariants}
-        initial="hidden"
-        animate="visible"
-        custom={3}
-      >
-        <h3 className={styles.sectionTitle}>
-          <Cpu size={20} className={styles.sectionIcon} />
-          {t.about.skills}
-        </h3>
-        <div className={styles.skillsGrid}>
-          {skillCategories.map((skillGroup, i) => (
-            <motion.div
-              key={skillGroup.category}
-              className={styles.skillCategory}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 + i * 0.08, duration: 0.4 }}
-            >
-              <h4 className={styles.skillCategoryTitle}>{skillGroup.category}</h4>
-              <div className={styles.skillTags}>
-                {skillGroup.items.map((item, j) => (
-                  <span key={j} className={styles.skillTag}>{item}</span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
-
       {/* Experience */}
       <motion.div
         className={styles.section}
         variants={sectionVariants}
         initial="hidden"
         animate="visible"
-        custom={4}
+        custom={3}
       >
         <h3 className={styles.sectionTitle}>
           <Briefcase size={20} className={styles.sectionIcon} />
@@ -197,40 +147,13 @@ const About = () => {
         </div>
       </motion.div>
 
-      {/* Soft Skills */}
-      <motion.div
-        className={styles.section}
-        variants={sectionVariants}
-        initial="hidden"
-        animate="visible"
-        custom={5}
-      >
-        <h3 className={styles.sectionTitle}>
-          <Heart size={20} className={styles.sectionIcon} />
-          {t.about.softSkills}
-        </h3>
-        <div className={styles.softSkillsGrid}>
-          {cvData.softSkills.map((skill, i) => (
-            <motion.div
-              key={i}
-              className={styles.softSkillCard}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5 + i * 0.06, duration: 0.3 }}
-            >
-              {skill}
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
-
       {/* Education */}
       <motion.div
         className={styles.section}
         variants={sectionVariants}
         initial="hidden"
         animate="visible"
-        custom={6}
+        custom={4}
       >
         <h3 className={styles.sectionTitle}>
           <GraduationCap size={20} className={styles.sectionIcon} />
@@ -252,6 +175,65 @@ const About = () => {
                 <span className={styles.eduPeriod}>{edu.period}</span>
                 {edu.status && <span className={styles.eduStatus}>{edu.status}</span>}
               </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Skills Grid */}
+      <motion.div
+        className={styles.section}
+        variants={sectionVariants}
+        initial="hidden"
+        animate="visible"
+        custom={5}
+      >
+        <h3 className={styles.sectionTitle}>
+          <Cpu size={20} className={styles.sectionIcon} />
+          {t.about.skills}
+        </h3>
+        <div className={styles.skillsGrid}>
+          {skillCategories.map((skillGroup, i) => (
+            <motion.div
+              key={skillGroup.category}
+              className={styles.skillCategory}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 + i * 0.08, duration: 0.4 }}
+            >
+              <h4 className={styles.skillCategoryTitle}>{skillGroup.category}</h4>
+              <div className={styles.skillTags}>
+                {skillGroup.items.map((item, j) => (
+                  <span key={j} className={styles.skillTag}>{item}</span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Soft Skills */}
+      <motion.div
+        className={styles.section}
+        variants={sectionVariants}
+        initial="hidden"
+        animate="visible"
+        custom={6}
+      >
+        <h3 className={styles.sectionTitle}>
+          <Heart size={20} className={styles.sectionIcon} />
+          {t.about.softSkills}
+        </h3>
+        <div className={styles.softSkillsGrid}>
+          {cvData.softSkills.map((skill, i) => (
+            <motion.div
+              key={i}
+              className={styles.softSkillCard}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5 + i * 0.06, duration: 0.3 }}
+            >
+              {skill}
             </motion.div>
           ))}
         </div>
@@ -282,6 +264,20 @@ const About = () => {
             </motion.span>
           ))}
         </div>
+      </motion.div>
+
+      {/* CTA Button */}
+      <motion.div
+        className={styles.ctaSection}
+        variants={sectionVariants}
+        initial="hidden"
+        animate="visible"
+        custom={8}
+      >
+        <a href="https://www.linkedin.com/in/jorgeloyonayati/" target="_blank" rel="noopener noreferrer" className={styles.ctaBtn}>
+          <MessageSquare size={18} />
+          {language === 'es' ? 'Hablemos' : "Let's Talk"}
+        </a>
       </motion.div>
     </div>
   );
