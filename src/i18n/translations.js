@@ -10,7 +10,7 @@ export const translations = {
     },
 
     header: {
-      role: "Desarrollador de Software & Web | Analista Funcional - Analista de Datos Senior",
+      role: "Analista de Datos Senior | Full Stack Developer | Analista Funcional TIC | Power BI & DAX | Python | Next.js | ERP",
       summary: "Transformo procesos complejos en soluciones digitales funcionales. Desarrollo sistemas a medida, integro IA para automatizar tareas, y construyo dashboards que convierten datos en decisiones. Si necesitas una herramienta que realmente resuelva un problema —un CRM, un gestor de licitaciones, un chatbot inteligente o una plataforma web completa— puedo llevarla de la idea a producción. Trabajo remoto, full-time o freelance."
     },
 
@@ -50,7 +50,7 @@ export const translations = {
     },
 
     header: {
-      role: "Software & Web Developer | Functional Analyst - Senior Data Analyst",
+      role: "Senior Data Analyst | Full Stack Developer | ICT Functional Analyst | Power BI & DAX | Python | Next.js | ERP",
       summary: "I turn complex processes into functional digital solutions. I build custom systems, integrate AI to automate tasks, and create dashboards that turn data into decisions. Whether you need a CRM, a bidding manager, a smart chatbot, or a full web platform — I can take it from concept to production. Available for remote, full-time, or freelance work."
     },
 

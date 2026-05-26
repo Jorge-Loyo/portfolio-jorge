@@ -1,7 +1,7 @@
 export const cvData = {
   profile: {
     name: "Jorge Loyo",
-    role: "Desarrollador de Software & Web | Analista Funcional - Analista de Datos Senior",
+    role: "Analista de Datos Senior | Full Stack Developer | Analista Funcional TIC | Power BI & DAX | Python | Next.js | ERP",
     location: "San Telmo, CABA, Argentina",
     email: "Jorgenayati@gmail.com",
     phone: "+54 9 11 6557 6344",
